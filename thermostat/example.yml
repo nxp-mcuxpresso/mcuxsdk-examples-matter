@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../scripts/data_schema/example_description_schema.json
+#
+# Copyright 2024-2025 NXP
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+thermostat:
+  section-type: application
+  contents:
+    meta_path: examples/matter_examples/thermostat
+    project-root-path: boards/${board}/demo_apps/hello_world/${multicore_foldername}
+    document:
+      name: thermostat
+      category: matter_examples
+      brief: The HelloWorld demo prints the "Hello World" string to the terminal using
+        the SDK UART drivers and repeat what user input. The purpose of this demo
+        is to show how to use the UART, and to provide a simple project for debugging
+        and further development.
+      example_readme:
+      - examples/demo_apps/hello_world/readme.md
+      - ${board_root}/${board}/demo_apps/hello_world/example_board_readme.md
+      - ${board_root}/${board}/examples_shared_readme.md
+    extra_files:
+    - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/zap
+      destination: zap
+    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
+      destination: nxp_sdk_reconfig.cmake
+    replacements:
+    - file: nxp_sdk_reconfig.cmake
+      replace:
+        - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+          to: "LINKER ${CHIP_ROOT}/third_party/nxp/nxp_matter_support/examples/platform/rt/rw61x/app/ldscripts/RW610_flash.ld"
+  boards:
+    evkbmimxrt1060:
+    - +armgcc@debug
+    - +armgcc@release
+    evkbmimxrt1170@cm7: []
+    evkcmimxrt1060: []
+    frdmrw612: []
+    rdrw612bga: []
