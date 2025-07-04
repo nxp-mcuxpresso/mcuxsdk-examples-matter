@@ -22,9 +22,9 @@ thermostat:
       - ${board_root}/${board}/examples_shared_readme.md
     extra_files:
     - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/zap
-      destination: common/zap
-    - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/common/main
-      destination: common/main
+      destination: zap
+    - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/common
+      destination: common
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
       board: [rdrw612bga, frdmrw612]
@@ -34,16 +34,16 @@ thermostat:
     replacements:
     - file: CMakeLists.txt
       replace:
-        - from: "get_filename_component(NXP_EXAMPLE_DIR ${CHIP_ROOT}/examples/thermostat/nxp/common REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_LIST_DIR}/common REALPATH)"
+        - from: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../common REALPATH)"
+          to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
     - file: CMakeLists.txt
       replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CHIP_ROOT}/examples/thermostat/nxp/zap REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_LIST_DIR}/common/zap REALPATH)"
+        - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap REALPATH)"
+          to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap REALPATH)"
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ${CMAKE_CURRENT_LIST_DIR}/ldscripts/RW610_flash.ld"
+          to: "LINKER ${CMAKE_CURRENT_SOURCE_DIR}/ldscripts/RW610_flash.ld"
       board: [rdrw612bga, frdmrw612]
   boards:
     evkbmimxrt1060:
