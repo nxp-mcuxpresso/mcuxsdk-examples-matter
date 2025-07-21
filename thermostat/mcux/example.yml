@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../../../../scripts/data_schema/example_description_schema.json
+# yaml-language-server: $schema=../../../../scripts/data_schema/example_description_schema.json
 #
 # Copyright 2024-2025 NXP
 #
@@ -9,7 +9,8 @@
 thermostat:
   section-type: application
   contents:
-    meta_path: examples/matter_examples/thermostat
+    project-root-path: examples/matter_examples/thermostat/mcux
+    meta_path: examples/matter_examples/thermostat/mcux
     document:
       name: thermostat
       category: matter_examples
@@ -145,7 +146,7 @@ thermostat@wifi_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-thermostat@wifi_iw612:
+thermostat@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -155,7 +156,7 @@ thermostat@wifi_iw612:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-thermostat@wifi_iw610:
+thermostat@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -165,7 +166,7 @@ thermostat@wifi_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-thermostat@wifi_iw416:
+thermostat@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:

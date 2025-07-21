@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../../../../scripts/data_schema/example_description_schema.json
+# yaml-language-server: $schema=../../../../scripts/data_schema/example_description_schema.json
 #
 # Copyright 2024-2025 NXP
 #
@@ -9,7 +9,8 @@
 all-clusters-app:
   section-type: application
   contents:
-    meta_path: examples/matter_examples/all-clusters-app
+    project-root-path: examples/matter_examples/all-clusters-app/mcux
+    meta_path: examples/matter_examples/all-clusters-app/mcux
     document:
       name: all-clusters-app
       category: matter_examples
@@ -148,7 +149,7 @@ all-clusters-app@wifi_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-all-clusters-app@wifi_iw612:
+all-clusters-app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -158,7 +159,7 @@ all-clusters-app@wifi_iw612:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-all-clusters-app@wifi_iw610:
+all-clusters-app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -168,7 +169,7 @@ all-clusters-app@wifi_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-all-clusters-app@wifi_iw416:
+all-clusters-app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
