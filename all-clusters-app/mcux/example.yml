@@ -54,18 +54,23 @@ all-clusters-app:
           to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
     - file: nxp_sdk_reconfig.cmake
       replace:
+        - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
+          to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
+      board: [rdrw612bga, frdmrw612, evkbmimxrt1170@cm7, evkbmimxrt1060, evkcmimxrt1060]
+    - file: nxp_sdk_reconfig.cmake
+      replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ${CMAKE_CURRENT_SOURCE_DIR}/ldscripts/RW610_flash.ld"
+          to: "LINKER ldscripts/RW610_flash.ld"
       board: [rdrw612bga, frdmrw612]
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ${CMAKE_CURRENT_SOURCE_DIR}/ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld"
+          to: "LINKER ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld"
       board: [evkbmimxrt1170@cm7]
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ${CMAKE_CURRENT_SOURCE_DIR}/ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
+          to: "LINKER ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
       board: [evkbmimxrt1060, evkcmimxrt1060]
     toolchains:
     - +armgcc@debug
