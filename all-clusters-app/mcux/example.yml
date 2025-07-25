@@ -16,7 +16,7 @@ all-clusters-app:
       category: matter_examples
       brief: The NXP All-clusters example implements a server which can be accessed by a CHIP
         controller and can accept basic cluster commands. The example is based on Project CHIP and NXP SDK,
-        and provides a prototype application which demonstrates device 
+        and provides a prototype application which demonstrates device
         commissioning and different cluster control.
       example_readme:
       - examples/matter_examples/all-clusters-app/README.md
@@ -378,68 +378,6 @@ all-clusters-app@thread_ftd_iw610_ota_factory_data:
     document:
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
-  boards:
-    evkcmimxrt1060: []
-
-# --- Thread FTD + Wi-Fi Border Router OTA Configuration ---
-all-clusters-app@thread_ftd_wifi_border_router_ota:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
-  boards:
-    frdmrw612: []
-    rdrw612bga: []
-all-clusters-app@thread_ftd_wifi_border_router_iw612_ota:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-  boards:
-    evkcmimxrt1060: []
-    evkbmimxrt1170@cm7: []
-all-clusters-app@thread_ftd_wifi_border_router_iw610_ota:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
-  boards:
-    evkcmimxrt1060: []
-
-# --- Thread FTD + Wi-Fi Border Router OTA with Factory Data Configuration ---
-all-clusters-app@thread_ftd_wifi_border_router_ota_factory_data:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
-  boards:
-    frdmrw612: []
-    rdrw612bga: []
-all-clusters-app@thread_ftd_wifi_border_router_iw612_ota_factory_data:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-  boards:
-    evkcmimxrt1060: []
-    evkbmimxrt1170@cm7: []
-all-clusters-app@thread_ftd_wifi_border_router_iw610_ota_factory_data:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
