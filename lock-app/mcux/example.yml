@@ -26,10 +26,10 @@ lock-app:
       destination: common
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
-      board: [frdmmcxw71, frdmmcxw72@cm33_core0]
+      board: [frdmmcxw71, frdmmcxw72]
     - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
       destination: ldscripts/connectivity.ld
-      board: [frdmmcxw71, frdmmcxw72@cm33_core0]
+      board: [frdmmcxw71, frdmmcxw72]
     replacements:
     - file: CMakeLists.txt
       replace:
@@ -51,7 +51,7 @@ lock-app:
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/connectivity.ld"
-      board: [frdmmcxw71, frdmmcxw72@cm33_core0]
+      board: [frdmmcxw71, frdmmcxw72]
     toolchains:
     - +armgcc@debug
     - +armgcc@release
