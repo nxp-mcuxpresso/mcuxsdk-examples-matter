@@ -29,13 +29,13 @@ all-clusters-app:
       destination: common
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
-      board: [rdrw612bga, frdmrw612, evkbmimxrt1060, evkbmimxrt1170@cm7, evkcmimxrt1060]
+      board: [rdrw612bga, frdmrw612, evkbmimxrt1060, evkbmimxrt1170, evkcmimxrt1060]
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rw61x/app/ldscripts/RW610_flash.ld
       destination: ldscripts/RW610_flash.ld
       board: [rdrw612bga, frdmrw612]
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1170/app/ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
       destination: ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
-      board: [evkbmimxrt1170@cm7]
+      board: [evkbmimxrt1170]
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1060/app/ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
       destination: ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
       board: [evkbmimxrt1060, evkcmimxrt1060]
@@ -56,7 +56,7 @@ all-clusters-app:
       replace:
         - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
           to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
-      board: [rdrw612bga, frdmrw612, evkbmimxrt1170@cm7, evkbmimxrt1060, evkcmimxrt1060]
+      board: [rdrw612bga, frdmrw612, evkbmimxrt1170, evkbmimxrt1060, evkcmimxrt1060]
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
@@ -66,7 +66,7 @@ all-clusters-app:
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld"
-      board: [evkbmimxrt1170@cm7]
+      board: [evkbmimxrt1170]
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
