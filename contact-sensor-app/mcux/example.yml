@@ -39,12 +39,12 @@ contact-sensor-app:
           to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
     - file: CMakeLists.txt
       replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-lit REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-lit REALPATH)"
+        - from: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-lit REALPATH)"
+          to: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-lit REALPATH)"
     - file: CMakeLists.txt
       replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-sit REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-sit REALPATH)"
+        - from: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-sit REALPATH)"
+          to: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-sit REALPATH)"
     - file: CMakeLists.txt
       replace:
         - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
