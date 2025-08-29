@@ -1,0 +1,20 @@
+NXP Software Content Register - mcuxsdk-examples-matter
+
+Outgoing License: LA_OPT_Online_Code_Hosting
+License File:     LICENSE.txt
+
+Name: example.yml
+Outgoing License: BSD-3-Clause        
+Type of content: config file 
+Description: SDK tooling configuration template
+Location: example mcux folder
+Release location: https://github.com/nxp-mcuxpresso/mcuxsdk-examples-matter
+Origin: NXP (BSD-3-Clause)
+
+Name: matter examples files
+Outgoing License: Apache-2.0
+Format: source code, project files, documentation
+Description: Matter examples for NXP MCU platforms
+Location: All folders of the mcuxsdk-examples-matter repository
+Release location: https://github.com/nxp-mcuxpresso/mcuxsdk-examples-matter
+Origin: https://github.com/project-chip/connectedhomeip
