@@ -19,6 +19,8 @@ contact-sensor-app:
         commissioning and different cluster control.
       example_readme:
       - examples/matter_examples/contact-sensor-app/README.md
+      extra_build_args:
+      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
     extra_files:
     - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/zap-lit
       destination: zap-lit

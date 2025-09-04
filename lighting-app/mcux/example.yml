@@ -19,6 +19,8 @@ lighting-app:
         commissioning and different cluster control.
       example_readme:
       - examples/matter_examples/lighting-app/README.md
+      extra_build_args:
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
     extra_files:
     - source: ${SdkRootDirPath}/middleware/matter/examples/lighting-app/nxp/zap
       destination: zap
