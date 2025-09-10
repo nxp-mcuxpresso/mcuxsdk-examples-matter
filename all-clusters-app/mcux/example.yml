@@ -387,3 +387,14 @@ all-clusters-app@thread_ftd_iw610_ota_factory_data:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
+
+# --- SE05X with Wi-Fi Configuration ---
+all-clusters-app@se05x_wifi:
+  section-type: custom_application
+  contents:
+    document:
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmrw612: []

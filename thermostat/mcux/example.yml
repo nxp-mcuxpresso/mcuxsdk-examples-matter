@@ -486,3 +486,14 @@ thermostat@ethernet_ota_factory_data:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_ota_fdata.conf
   boards:
     frdmrw612: []
+
+# --- SE05X with Wi-Fi Configuration ---
+thermostat@se05x_wifi:
+  section-type: custom_application
+  contents:
+    document:
+      extra_build_args:
+      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+      - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmrw612: []
