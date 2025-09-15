@@ -21,9 +21,9 @@ light-switch-app-ble-cs:
       extra_build_args:
         - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
     extra_files:
-    - source: ${SdkRootDirPath}/middleware/matter/examples/light-switch-app-ble-cs/nxp/zap
+    - source: ${SdkRootDirPath}/middleware/matter/examples/light-switch-app/nxp/zap
       destination: zap
-    - source: ${SdkRootDirPath}/middleware/matter/examples/light-switch-app-ble-cs/nxp/common
+    - source: ${SdkRootDirPath}/middleware/matter/examples/light-switch-app/nxp/common
       destination: common
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
