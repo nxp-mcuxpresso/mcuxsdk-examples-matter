@@ -487,13 +487,28 @@ thermostat@ethernet_ota_factory_data:
   boards:
     frdmrw612: []
 
-# --- SE05X with Wi-Fi Configuration ---
-thermostat@se05x_wifi:
+# --- SE05X with Wi-Fi Default Crypto Configuration ---
+thermostat@se05x_wifi_default_crypto:
   section-type: custom_application
   contents:
     document:
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
       - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmrw612: []
+
+# --- SE05X with Wi-Fi All Crypto Configuration ---
+thermostat@se05x_wifi_all_crypto:
+  section-type: custom_application
+  contents:
+    document:
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_CHIP_SE05X=y
+        - -DCONFIG_CHIP_SE05X_RND_GEN=y
+        - -DCONFIG_CHIP_SE05X_HKDF_SHA256=y
+        - -DCONFIG_CHIP_CHIP_SE05X_HMAC_SHA256=y
+        - -DCONFIG_CHIP_SE05X_DEVICE_ATTESTATION=y
   boards:
     frdmrw612: []
