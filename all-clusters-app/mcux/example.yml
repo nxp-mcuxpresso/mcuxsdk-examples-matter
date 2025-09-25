@@ -409,7 +409,7 @@ all-clusters-app@se05x_wifi_all_crypto:
         - -DCONFIG_CHIP_SE05X=y
         - -DCONFIG_CHIP_SE05X_RND_GEN=y
         - -DCONFIG_CHIP_SE05X_HKDF_SHA256=y
-        - -DCONFIG_CHIP_CHIP_SE05X_HMAC_SHA256=y
+        - -DCONFIG_CHIP_SE05X_HMAC_SHA256=y
         - -DCONFIG_CHIP_SE05X_DEVICE_ATTESTATION=y
   boards:
     frdmrw612: []
