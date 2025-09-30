@@ -15,7 +15,7 @@ lock-app:
       name: lock-app
       category: matter_examples
       brief: The NXP lock-app example is based on Project CHIP and NXP SDK,
-        and provides a prototype of a contact-sensor device which demonstrates device 
+        and provides a prototype of a smart lock device which demonstrates device 
         commissioning and different cluster control.
       example_readme:
       - examples/matter_examples/lock-app/README.md
@@ -82,70 +82,88 @@ lock-app:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread MTD Configuration ---
 lock-app@thread_mtd:
   section-type: custom_application
   contents:
     document:
+      brief: Thread Minimal Thread Device (MTD) configuration
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
 lock-app@thread_mtd_low_power:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with low power optimization
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread MTD with Factory Data Configuration ---
 lock-app@thread_mtd_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with factory data provisioning
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread MTD OTA Configuration ---
 lock-app@thread_mtd_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with OTA update capability
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
 lock-app@thread_mtd_ota_low_power:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with OTA updates and low power optimization
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread MTD OTA with Factory Data Configuration ---
 lock-app@thread_mtd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
 lock-app@thread_mtd_ota_factory_data_low_power:
   section-type: custom_application
   contents:
     document:
+      brief: Thread MTD configuration with OTA updates, factory data, and low power optimization
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n

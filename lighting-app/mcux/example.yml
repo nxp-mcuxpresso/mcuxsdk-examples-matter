@@ -15,7 +15,7 @@ lighting-app:
       name: lighting-app
       category: matter_examples
       brief: The NXP lighting-app example is based on Project CHIP and NXP SDK,
-        and provides a prototype of a contact-sensor device which demonstrates device 
+        and provides a prototype of a lighting device which demonstrates device 
         commissioning and different cluster control.
       example_readme:
       - examples/matter_examples/lighting-app/README.md
@@ -82,40 +82,52 @@ lighting-app:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD Configuration ---
 lighting-app@thread_ftd:
   section-type: custom_application
   contents:
     document:
+      brief: Thread Full Thread Device (FTD) configuration
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD with Factory Data Configuration ---
 lighting-app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with factory data provisioning
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD OTA Configuration ---
 lighting-app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA update capability
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD OTA with Factory Data Configuration ---
 lighting-app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n

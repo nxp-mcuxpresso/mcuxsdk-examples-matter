@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-# This file describes the Matter all-clusters-app example application for the NXP MCUXpresso SDK.
+# This file describes the Matter All Clusters example application for the NXP MCUXpresso SDK.
 
 all-clusters-app:
   section-type: application
@@ -109,16 +109,19 @@ all-clusters-app@wifi_iw610:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW610 transceiver
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
+
 all-clusters-app@wifi_iw416:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW416 transceiver
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
@@ -130,35 +133,42 @@ all-clusters-app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with factory data provisioning
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW612 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW610 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
+
 all-clusters-app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW416 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
@@ -170,25 +180,30 @@ all-clusters-app@wifi_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with OTA update capability
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@wifi_iw612_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW612 transceiver and OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@wifi_iw610_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW610 transceiver and OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
@@ -201,25 +216,30 @@ all-clusters-app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@wifi_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW612 transceiver, OTA updates, and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@wifi_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW610 transceiver, OTA updates, and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
@@ -232,35 +252,42 @@ all-clusters-app@thread_ftd:
   section-type: custom_application
   contents:
     document:
+      brief: Thread Full Thread Device (FTD) configuration
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@thread_ftd_iw612:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW612 transceiver
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@thread_ftd_iw610:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW610 transceiver
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
+
 all-clusters-app@thread_ftd_k32w0:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with K32W061 transceiver
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
@@ -272,35 +299,42 @@ all-clusters-app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@thread_ftd_iw612_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW612 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@thread_ftd_iw610_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW610 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
+
 all-clusters-app@thread_ftd_k32w0_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with K32W061 transceiver and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
@@ -312,25 +346,30 @@ all-clusters-app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@thread_ftd_iw612_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW612 transceiver and OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@thread_ftd_iw610_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW610 transceiver and OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
@@ -343,25 +382,30 @@ all-clusters-app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
+
 all-clusters-app@thread_ftd_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW612 transceiver, OTA updates, and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
+
 all-clusters-app@thread_ftd_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with IW610 transceiver, OTA updates, and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
@@ -374,6 +418,7 @@ all-clusters-app@se05x_wifi_default_crypto:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with SE05X secure element
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
         - -DCONFIG_CHIP_SE05X=y
@@ -385,6 +430,7 @@ all-clusters-app@se05x_wifi_all_crypto:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with SE05X secure element and enhanced crypto operations
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
         - -DCONFIG_CHIP_SE05X=y
