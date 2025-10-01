@@ -102,25 +102,6 @@ cooktop-app:
     rdrw612bga: []
 
 # --- Wi-Fi Configuration ---
-cooktop-app@wifi:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-  boards:
-    frdmrw612: []
-    rdrw612bga: []
-cooktop-app@wifi_iw612:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-  boards:
-    evkcmimxrt1060: []
-    evkbmimxrt1170@cm7: []
 cooktop-app@wifi_iw610:
   section-type: custom_application
   contents:

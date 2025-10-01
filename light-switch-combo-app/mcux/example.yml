@@ -82,17 +82,6 @@ light-switch-combo-app:
     frdmrw612: []
     rdrw612bga: []
 
-# --- Wi-Fi Configuration ---
-light-switch-combo-app@wifi:
-  section-type: custom_application
-  contents:
-    document:
-      extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-  boards:
-    frdmrw612: []
-    rdrw612bga: []
-
 # --- Wi-Fi with Factory Data Configuration ---
 light-switch-combo-app@wifi_factory_data:
   section-type: custom_application
