@@ -53,6 +53,8 @@ light-switch-combo-app:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/RW610_flash.ld"
       board: [rdrw612bga, frdmrw612]
+    freestanding_copied_folders:
+    -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
     - +armgcc@debug
     - +armgcc@release

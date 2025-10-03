@@ -69,6 +69,8 @@ microwave-oven-app:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
       board: [evkbmimxrt1060, evkcmimxrt1060]
+    freestanding_copied_folders:
+    -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
     - +armgcc@debug
     - +armgcc@release
