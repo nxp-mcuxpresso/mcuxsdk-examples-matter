@@ -27,3 +27,17 @@ and test it can be found in the common readme for NXP platforms :
 -   NXP FreeRTOS Platforms : Refer to the
     [CHIP NXP Examples Guide for FreeRTOS platforms](../../../docs/platforms/nxp/nxp_examples_freertos_platforms.md)
 
+## Supported Configurations
+
+| Variant | Description | Supported Boards | Project Configuration File | Extra Args |
+|---------|-------------|------------------|----------------------------|------------|
+| `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | frdmrw612, rdrw612bga | Default | None |
+| `wifi_factory_data` | Wi-Fi configuration with factory data provisioning | frdmrw612, rdrw612bga | `prj_wifi_fdata.conf` | None |
+| `wifi_ota` | Wi-Fi configuration with OTA update capability | frdmrw612, rdrw612bga | `prj_wifi_ota.conf` | None |
+| `wifi_ota_factory_data` | Wi-Fi configuration with OTA updates and factory data | frdmrw612, rdrw612bga | `prj_wifi_ota_fdata.conf` | None |
+| `thread_ftd` | Thread Full Thread Device (FTD) configuration | frdmrw612, rdrw612bga | `prj_thread_ftd.conf` | None |
+| `thread_ftd_factory_data` | Thread FTD configuration with factory data | frdmrw612, rdrw612bga | `prj_thread_ftd_fdata.conf` | None |
+| `thread_ftd_ota` | Thread FTD configuration with OTA updates | frdmrw612, rdrw612bga | `prj_thread_ftd_ota.conf` | None |
+| `thread_ftd_ota_factory_data` | Thread FTD configuration with OTA updates and factory data | frdmrw612, rdrw612bga | `prj_thread_ftd_ota_fdata.conf` | None |
+| `thread_ftd_wifi_border_router_ota` | Thread FTD configuration with Wi-Fi border router and OTA updates | frdmrw612, rdrw612bga | `prj_thread_ftd_wifi_br_ota.conf` | None |
+| `thread_ftd_wifi_border_router_ota_factory_data` | Thread FTD configuration with Wi-Fi border router, OTA updates, and factory data | frdmrw612, rdrw612bga | `prj_thread_ftd_wifi_br_ota_fdata.conf` | None |

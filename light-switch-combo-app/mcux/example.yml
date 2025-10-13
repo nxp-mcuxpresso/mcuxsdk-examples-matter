@@ -89,6 +89,7 @@ light-switch-combo-app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with factory data provisioning
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
   boards:
@@ -100,6 +101,7 @@ light-switch-combo-app@wifi_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with OTA update capability
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
   boards:
@@ -111,6 +113,7 @@ light-switch-combo-app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
   boards:
@@ -122,6 +125,7 @@ light-switch-combo-app@thread_ftd:
   section-type: custom_application
   contents:
     document:
+      brief: Thread Full Thread Device (FTD) configuration
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
   boards:
@@ -133,6 +137,7 @@ light-switch-combo-app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
   boards:
@@ -144,6 +149,7 @@ light-switch-combo-app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
   boards:
@@ -155,6 +161,7 @@ light-switch-combo-app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with OTA updates and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
   boards:
@@ -166,6 +173,7 @@ light-switch-combo-app@thread_ftd_wifi_border_router_ota:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with Wi-Fi border router and OTA updates
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
   boards:
@@ -177,6 +185,7 @@ light-switch-combo-app@thread_ftd_wifi_border_router_ota_factory_data:
   section-type: custom_application
   contents:
     document:
+      brief: Thread FTD configuration with Wi-Fi border router, OTA updates, and factory data
       extra_build_args:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
   boards:
