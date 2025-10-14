@@ -61,9 +61,9 @@ and test it can be found in the common readme for NXP platforms :
 ## Matter BLE CS example
 
 - Connect the MCXW72 light-switch-app-ble-cs device and the MCXW72 loc_user_device_bm and open serial terminals for both.
-- Commission the MCXW72 light-switch-app-ble-cs device into the Matter fabric (press SW2). After this step sometimes, the board needs to be restarted.
+- Commission the MCXW72 light-switch-app-ble-cs device into the Matter fabric (press SW2).
 - Start BLE advertising again on MCXW72 light-switch-app-ble-cs (press SW2).
-- On MCXW72 loc_user_device_bm console type `factoryreset`, `sb`.
+- On MCXW72 loc_user_device_bm console type `factoryreset` (optional after first connection), `sb`.
 - The distance measurements will appear on the MCXW72 light-switch-app-ble-cs logs.
 - On MCXW72 loc_user_device_bm console type `tdm 0` to trigger further distance measurements.
 - [Example log](./main/images/distance-measurements.png)
