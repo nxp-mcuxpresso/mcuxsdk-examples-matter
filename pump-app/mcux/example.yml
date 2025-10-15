@@ -20,6 +20,8 @@ pump-app:
       example_readme:
       - examples/matter_examples/pump-app/README.md
     extra_files:
+    - source: examples/matter_examples/pump-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/pump-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/pump-app/nxp/common

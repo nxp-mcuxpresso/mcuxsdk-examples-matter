@@ -20,6 +20,8 @@ onoff-plugin-unit-app:
       example_readme:
       - examples/matter_examples/onoff-plugin-unit-app/README.md
     extra_files:
+    - source: examples/matter_examples/onoff-plugin-unit-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/onoff-plugin-unit-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/onoff-plugin-unit-app/nxp/common

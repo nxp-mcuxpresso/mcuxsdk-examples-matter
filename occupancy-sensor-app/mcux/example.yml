@@ -20,6 +20,8 @@ occupancy-sensor-app:
       example_readme:
       - examples/matter_examples/occupancy-sensor-app/README.md
     extra_files:
+    - source: examples/matter_examples/occupancy-sensor-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/occupancy-sensor-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/occupancy-sensor-app/nxp/common

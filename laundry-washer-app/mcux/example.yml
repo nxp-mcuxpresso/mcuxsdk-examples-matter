@@ -20,6 +20,8 @@ laundry-washer-app:
       example_readme:
       - examples/matter_examples/laundry-washer-app/README.md
     extra_files:
+    - source: examples/matter_examples/laundry-washer-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/laundry-washer-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/laundry-washer-app/nxp/common

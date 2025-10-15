@@ -20,6 +20,8 @@ temperature-measurement-app:
       example_readme:
       - examples/matter_examples/temperature-measurement-app/README.md
     extra_files:
+    - source: examples/matter_examples/temperature-measurement-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/temperature-measurement-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/temperature-measurement-app/nxp/common

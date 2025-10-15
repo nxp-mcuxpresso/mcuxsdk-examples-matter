@@ -22,6 +22,8 @@ lock-app:
       extra_build_args:
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
     extra_files:
+    - source: examples/matter_examples/lock-app/README.md
+      destination: README.md
     - source: ${SdkRootDirPath}/middleware/matter/examples/lock-app/nxp/zap
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/lock-app/nxp/common
