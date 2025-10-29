@@ -39,7 +39,7 @@ and test it can be found in the common readme for NXP platforms :
 - The example is located into `examples/light-switch-app-ble-cs`
 - Use `west list` to see the building variants. `mcxw72evk` or `frdmmcxw72` are the available boards.
 - Build the app: eg `west build -d build_matter -b mcxw72evk examples/matter_examples/light-switch-app-ble-cs/mcux -DCONF_FILE=<absolute_path_to>/prj_thread_ftd.conf -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n -Dcore_id=cm33_core0 -DCONFIG_CHIP_LIB_SHELL=n`.
-- `-DCONFIG_CHIP_LIB_SHELL=n` is added to redirect the logs to the usb serial, this is easier for distance measurement visualisation. Otherwise, a USB-UART bridge is needed to see the logs, see `Additional UART interface` from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md)
+- `-DCONFIG_CHIP_LIB_SHELL=n` is added to redirect the matter logs to the usb serial, this is easier for distance measurement visualisation. If this config is removed, matter cli is available on the usb serial and a USB-UART bridge is needed to see the logs, see `Additional UART interface` from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md)
 - The application binary will be located into `./build_matter/app.bin`.
 - Use the NBU binary from the SDK zip or sdk-next: `middleware/wireless/ieee-802.15.4/bin/mcxw72/mcxw72_nbu_ble_full_15_4_dyn.bin`
 - Use the instructions from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md) for flashing on the MCXW72 board.
@@ -60,9 +60,9 @@ and test it can be found in the common readme for NXP platforms :
 
 ## Matter BLE CS example
 
-- Connect the MCXW72 light-switch-app-ble-cs device and the MCXW72 loc_user_device_bm and open serial terminals for both.
-- Commission the MCXW72 light-switch-app-ble-cs device into the Matter fabric (press SW2).
-- Start BLE advertising again on MCXW72 light-switch-app-ble-cs (press SW2).
+- Connect the MCXW72 light-switch-app-ble-cs device and the MCXW72 loc_user_device_bm and open serial terminals for both. If the matter cli is used, the matter logs will be available on the second serial, see [Build section](#build-the-loc_user-device-ble-cs-example).
+- Commission the MCXW72 light-switch-app-ble-cs device into the Matter fabric (press SW2 or type `mattercommissioning on` on the serial terminal if matter cli is used).
+- Start BLE advertising again on MCXW72 light-switch-app-ble-cs (press SW2 or type `startblecsadv` on the serial terminal if matter cli is used).
 - On MCXW72 loc_user_device_bm console type `factoryreset` (optional after first connection), `sb`.
 - The distance measurements will appear on the MCXW72 light-switch-app-ble-cs logs.
 - On MCXW72 loc_user_device_bm console type `tdm 0` to trigger further distance measurements.
