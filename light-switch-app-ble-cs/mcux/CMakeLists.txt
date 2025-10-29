@@ -95,6 +95,21 @@ target_sources(app
     ${CMAKE_CURRENT_SOURCE_DIR}/../main/source/NXPHostBLECSApplicationManager.cpp
 )
 
+# Add NXP example specific application macros, dirs, sources
+target_compile_definitions(app
+    PRIVATE
+    CONFIG_APP_TASK_CUSTOM_SINGLETON_IMPL)
+
+target_include_directories(app
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/../main/include
+)
+
+target_sources(app
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/../main/source/AppTaskCs.cpp
+)
+
 # This is a temporary workaround to avoid a popular linker limitation.
 # The linker is unable to replace weak symbols with their strong
 # counterparts when both weak and strong symbols are hosted in a static
