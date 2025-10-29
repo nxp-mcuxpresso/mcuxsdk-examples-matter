@@ -29,8 +29,10 @@ light-switch-app-ble-cs:
       destination: nxp_sdk_reconfig.cmake
     - source: examples/matter_examples/light-switch-app-ble-cs/README.md
       destination: README.md
+    - source: examples/matter_examples/light-switch-app-ble-cs/main/include
+      destination: common/include
     - source: examples/matter_examples/light-switch-app-ble-cs/main/source
-      destination: common
+      destination: common/source
     - source: examples/matter_examples/light-switch-app-ble-cs/main/images
       destination: common/images
       board: [frdmmcxw72, mcxw72evk]
@@ -52,8 +54,12 @@ light-switch-app-ble-cs:
           to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
     - file: CMakeLists.txt
       replace:
+        - from: "${CMAKE_CURRENT_SOURCE_DIR}/../main/include"
+          to: "${CMAKE_CURRENT_SOURCE_DIR}/common/include"
+    - file: CMakeLists.txt
+      replace:
         - from: "${CMAKE_CURRENT_SOURCE_DIR}/../main/source"
-          to: "${CMAKE_CURRENT_SOURCE_DIR}/common"
+          to: "${CMAKE_CURRENT_SOURCE_DIR}/common/source"
     - file: nxp_sdk_reconfig.cmake
       replace:
         - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
