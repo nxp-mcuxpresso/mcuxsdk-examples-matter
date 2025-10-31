@@ -86,6 +86,7 @@ lighting-app:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread FTD Configuration ---
 lighting-app@thread_ftd:
@@ -99,6 +100,7 @@ lighting-app@thread_ftd:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread FTD with Factory Data Configuration ---
 lighting-app@thread_ftd_factory_data:
@@ -112,6 +114,7 @@ lighting-app@thread_ftd_factory_data:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread FTD OTA Configuration ---
 lighting-app@thread_ftd_ota:
@@ -125,6 +128,7 @@ lighting-app@thread_ftd_ota:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
 lighting-app@thread_ftd_ota_factory_data:
@@ -138,3 +142,4 @@ lighting-app@thread_ftd_ota_factory_data:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
