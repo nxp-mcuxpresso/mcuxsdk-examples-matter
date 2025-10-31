@@ -67,3 +67,13 @@ and test it can be found in the common readme for NXP platforms :
 - The distance measurements will appear on the MCXW72 light-switch-app-ble-cs logs.
 - On MCXW72 loc_user_device_bm console type `tdm 0` to trigger further distance measurements.
 - [Example log](./main/images/distance-measurements.png)
+
+## Supported Configurations
+
+| Variant | Description | Supported Boards | Project Configuration File | Extra Args |
+|---------|-------------|------------------|----------------------------|------------|
+| `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | Default | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd` | Thread Full Thread Device (FTD) configuration with BLE CS functionality | frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_factory_data` | Thread Full Thread Device (FTD) configuration with BLE CS functionality and factory data provisioning | frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_ota` | Thread Full Thread Device (FTD) configuration with BLE CS functionality and OTA updates | frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_ota.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_ota_factory_data` | Thread Full Thread Device (FTD) configuration with BLE CS functionality, OTA updates and factory data provisioning | frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |

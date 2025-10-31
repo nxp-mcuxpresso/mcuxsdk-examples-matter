@@ -86,6 +86,7 @@ lock-app:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread MTD Configuration ---
 lock-app@thread_mtd:
@@ -99,6 +100,7 @@ lock-app@thread_mtd:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 lock-app@thread_mtd_low_power:
   section-type: custom_application
@@ -111,6 +113,7 @@ lock-app@thread_mtd_low_power:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread MTD with Factory Data Configuration ---
 lock-app@thread_mtd_factory_data:
@@ -124,6 +127,7 @@ lock-app@thread_mtd_factory_data:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA Configuration ---
 lock-app@thread_mtd_ota:
@@ -137,6 +141,7 @@ lock-app@thread_mtd_ota:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 lock-app@thread_mtd_ota_low_power:
   section-type: custom_application
@@ -149,6 +154,7 @@ lock-app@thread_mtd_ota_low_power:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA with Factory Data Configuration ---
 lock-app@thread_mtd_ota_factory_data:
@@ -162,6 +168,7 @@ lock-app@thread_mtd_ota_factory_data:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
 
 lock-app@thread_mtd_ota_factory_data_low_power:
   section-type: custom_application
@@ -174,3 +181,4 @@ lock-app@thread_mtd_ota_factory_data_low_power:
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []

@@ -64,8 +64,8 @@ corresponding to data model target.
 
 | Variant | Description | Supported Boards | Project Configuration File | Extra Args |
 |---------|-------------|------------------|----------------------------|------------|
-| `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | frdmmcxw71, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
-| `thread_ftd` | Thread Full Thread Device (FTD) configuration | frdmmcxw71, frdmmcxw72@cm33_core0 | `prj_thread_ftd.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
-| `thread_ftd_factory_data` | Thread FTD configuration with factory data provisioning | frdmmcxw71, frdmmcxw72@cm33_core0 | `prj_thread_ftd_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
-| `thread_ftd_ota` | Thread FTD configuration with OTA update capability | frdmmcxw71, frdmmcxw72@cm33_core0 | `prj_thread_ftd_ota.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
-| `thread_ftd_ota_factory_data` | Thread FTD configuration with OTA updates and factory data | frdmmcxw71, frdmmcxw72@cm33_core0 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | frdmmcxw71, frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | Default | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd` | Thread Full Thread Device (FTD) configuration | frdmmcxw71, frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_factory_data` | Thread FTD configuration with factory data provisioning | frdmmcxw71, frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_ota` | Thread FTD configuration with OTA update capability | frdmmcxw71, frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_ota.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
+| `thread_ftd_ota_factory_data` | Thread FTD configuration with OTA updates and factory data | frdmmcxw71, frdmmcxw72@cm33_core0, mcxw72evk@cm33_core0 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n` |
