@@ -6,7 +6,7 @@
 
 # This file describes the Matter All Clusters example application for the NXP MCUXpresso SDK.
 
-all-clusters-app:
+all_clusters_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/all-clusters-app/mcux
@@ -109,7 +109,7 @@ all-clusters-app:
     rdrw612bga: []
 
 # --- Wi-Fi Configuration ---
-all-clusters-app@wifi_iw610:
+all_clusters_app@wifi_iw610:
   section-type: custom_application
   contents:
     document:
@@ -121,7 +121,7 @@ all-clusters-app@wifi_iw610:
   boards:
     evkcmimxrt1060: []
 
-all-clusters-app@wifi_iw416:
+all_clusters_app@wifi_iw416:
   section-type: custom_application
   contents:
     document:
@@ -133,7 +133,7 @@ all-clusters-app@wifi_iw416:
     evkbmimxrt1060: []
 
 # --- Wi-Fi with Factory Data Configuration ---
-all-clusters-app@wifi_factory_data:
+all_clusters_app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -144,7 +144,7 @@ all-clusters-app@wifi_factory_data:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@wifi_iw612_fdata:
+all_clusters_app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -156,7 +156,7 @@ all-clusters-app@wifi_iw612_fdata:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@wifi_iw610_fdata:
+all_clusters_app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -168,7 +168,7 @@ all-clusters-app@wifi_iw610_fdata:
   boards:
     evkcmimxrt1060: []
 
-all-clusters-app@wifi_iw416_fdata:
+all_clusters_app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
@@ -180,7 +180,7 @@ all-clusters-app@wifi_iw416_fdata:
     evkbmimxrt1060: []
 
 # --- Wi-Fi OTA Configuration ---
-all-clusters-app@wifi_ota:
+all_clusters_app@wifi_ota:
   section-type: custom_application
   contents:
     document:
@@ -191,7 +191,7 @@ all-clusters-app@wifi_ota:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@wifi_iw612_ota:
+all_clusters_app@wifi_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -203,7 +203,7 @@ all-clusters-app@wifi_iw612_ota:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@wifi_iw610_ota:
+all_clusters_app@wifi_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -216,7 +216,7 @@ all-clusters-app@wifi_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Wi-Fi OTA with Factory Data Configuration ---
-all-clusters-app@wifi_ota_factory_data:
+all_clusters_app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -227,7 +227,7 @@ all-clusters-app@wifi_ota_factory_data:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@wifi_iw612_ota_factory_data:
+all_clusters_app@wifi_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -239,7 +239,7 @@ all-clusters-app@wifi_iw612_ota_factory_data:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@wifi_iw610_ota_factory_data:
+all_clusters_app@wifi_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -252,7 +252,7 @@ all-clusters-app@wifi_iw610_ota_factory_data:
     evkcmimxrt1060: []
 
 # --- Thread FTD Configuration ---
-all-clusters-app@thread_ftd:
+all_clusters_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -263,7 +263,7 @@ all-clusters-app@thread_ftd:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@thread_ftd_iw612:
+all_clusters_app@thread_ftd_iw612:
   section-type: custom_application
   contents:
     document:
@@ -275,7 +275,7 @@ all-clusters-app@thread_ftd_iw612:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@thread_ftd_iw610:
+all_clusters_app@thread_ftd_iw610:
   section-type: custom_application
   contents:
     document:
@@ -287,7 +287,7 @@ all-clusters-app@thread_ftd_iw610:
   boards:
     evkcmimxrt1060: []
 
-all-clusters-app@thread_ftd_k32w0:
+all_clusters_app@thread_ftd_k32w0:
   section-type: custom_application
   contents:
     document:
@@ -299,7 +299,7 @@ all-clusters-app@thread_ftd_k32w0:
     evkbmimxrt1060: []
 
 # --- Thread FTD with Factory Data Configuration ---
-all-clusters-app@thread_ftd_factory_data:
+all_clusters_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -310,7 +310,7 @@ all-clusters-app@thread_ftd_factory_data:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@thread_ftd_iw612_factory_data:
+all_clusters_app@thread_ftd_iw612_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -322,7 +322,7 @@ all-clusters-app@thread_ftd_iw612_factory_data:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@thread_ftd_iw610_factory_data:
+all_clusters_app@thread_ftd_iw610_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -334,7 +334,7 @@ all-clusters-app@thread_ftd_iw610_factory_data:
   boards:
     evkcmimxrt1060: []
 
-all-clusters-app@thread_ftd_k32w0_factory_data:
+all_clusters_app@thread_ftd_k32w0_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -346,7 +346,7 @@ all-clusters-app@thread_ftd_k32w0_factory_data:
     evkbmimxrt1060: []
 
 # --- Thread FTD OTA Configuration ---
-all-clusters-app@thread_ftd_ota:
+all_clusters_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -357,7 +357,7 @@ all-clusters-app@thread_ftd_ota:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@thread_ftd_iw612_ota:
+all_clusters_app@thread_ftd_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -369,7 +369,7 @@ all-clusters-app@thread_ftd_iw612_ota:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@thread_ftd_iw610_ota:
+all_clusters_app@thread_ftd_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -382,7 +382,7 @@ all-clusters-app@thread_ftd_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-all-clusters-app@thread_ftd_ota_factory_data:
+all_clusters_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -393,7 +393,7 @@ all-clusters-app@thread_ftd_ota_factory_data:
     frdmrw612: []
     rdrw612bga: []
 
-all-clusters-app@thread_ftd_iw612_ota_factory_data:
+all_clusters_app@thread_ftd_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -405,7 +405,7 @@ all-clusters-app@thread_ftd_iw612_ota_factory_data:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
 
-all-clusters-app@thread_ftd_iw610_ota_factory_data:
+all_clusters_app@thread_ftd_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -418,7 +418,7 @@ all-clusters-app@thread_ftd_iw610_ota_factory_data:
     evkcmimxrt1060: []
 
 # --- SE05X with Wi-Fi Default Crypto Configuration ---
-all-clusters-app@se05x_wifi_default_crypto:
+all_clusters_app@se05x_wifi_default_crypto:
   section-type: custom_application
   contents:
     document:
@@ -430,7 +430,7 @@ all-clusters-app@se05x_wifi_default_crypto:
     frdmrw612: []
 
 # --- SE05X with Wi-Fi All Crypto Configuration ---
-all-clusters-app@se05x_wifi_all_crypto:
+all_clusters_app@se05x_wifi_all_crypto:
   section-type: custom_application
   contents:
     document:

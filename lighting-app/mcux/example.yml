@@ -6,7 +6,7 @@
 
 # This file describes the Matter Lighting-App example application for the NXP MCUXpresso SDK.
 
-lighting-app:
+lighting_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/lighting-app/mcux
@@ -89,7 +89,7 @@ lighting-app:
     mcxw72evk@cm33_core0: []
 
 # --- Thread FTD Configuration ---
-lighting-app@thread_ftd:
+lighting_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -103,7 +103,7 @@ lighting-app@thread_ftd:
     mcxw72evk@cm33_core0: []
 
 # --- Thread FTD with Factory Data Configuration ---
-lighting-app@thread_ftd_factory_data:
+lighting_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -117,7 +117,7 @@ lighting-app@thread_ftd_factory_data:
     mcxw72evk@cm33_core0: []
 
 # --- Thread FTD OTA Configuration ---
-lighting-app@thread_ftd_ota:
+lighting_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -131,7 +131,7 @@ lighting-app@thread_ftd_ota:
     mcxw72evk@cm33_core0: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-lighting-app@thread_ftd_ota_factory_data:
+lighting_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
