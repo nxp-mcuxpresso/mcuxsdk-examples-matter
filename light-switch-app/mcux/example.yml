@@ -6,7 +6,7 @@
 
 # This file describes the Matter Light switch example application for the NXP MCUXpresso SDK.
 
-light-switch-app:
+light_switch_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/light-switch-app/mcux
@@ -106,7 +106,7 @@ light-switch-app:
     rdrw612bga: []
 
 # --- Wi-Fi Configuration ---
-light-switch-app@wifi_iw610:
+light_switch_app@wifi_iw610:
   section-type: custom_application
   contents:
     document:
@@ -117,7 +117,7 @@ light-switch-app@wifi_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-light-switch-app@wifi_iw416:
+light_switch_app@wifi_iw416:
   section-type: custom_application
   contents:
     document:
@@ -129,7 +129,7 @@ light-switch-app@wifi_iw416:
     evkbmimxrt1060: []
 
 # --- Wi-Fi with Factory Data Configuration ---
-light-switch-app@wifi_factory_data:
+light_switch_app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -139,7 +139,7 @@ light-switch-app@wifi_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@wifi_iw612_fdata:
+light_switch_app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -150,7 +150,7 @@ light-switch-app@wifi_iw612_fdata:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@wifi_iw610_fdata:
+light_switch_app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -161,7 +161,7 @@ light-switch-app@wifi_iw610_fdata:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-light-switch-app@wifi_iw416_fdata:
+light_switch_app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
@@ -173,7 +173,7 @@ light-switch-app@wifi_iw416_fdata:
     evkbmimxrt1060: []
 
 # --- Wi-Fi OTA Configuration ---
-light-switch-app@wifi_ota:
+light_switch_app@wifi_ota:
   section-type: custom_application
   contents:
     document:
@@ -183,7 +183,7 @@ light-switch-app@wifi_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@wifi_iw612_ota:
+light_switch_app@wifi_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -194,7 +194,7 @@ light-switch-app@wifi_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@wifi_iw610_ota:
+light_switch_app@wifi_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -207,7 +207,7 @@ light-switch-app@wifi_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Wi-Fi OTA with Factory Data Configuration ---
-light-switch-app@wifi_ota_factory_data:
+light_switch_app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -217,7 +217,7 @@ light-switch-app@wifi_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@wifi_iw612_ota_factory_data:
+light_switch_app@wifi_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -228,7 +228,7 @@ light-switch-app@wifi_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@wifi_iw610_ota_factory_data:
+light_switch_app@wifi_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -241,7 +241,7 @@ light-switch-app@wifi_iw610_ota_factory_data:
     evkcmimxrt1060: []
 
 # --- Thread FTD Configuration ---
-light-switch-app@thread_ftd:
+light_switch_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -251,7 +251,7 @@ light-switch-app@thread_ftd:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@thread_ftd_iw612:
+light_switch_app@thread_ftd_iw612:
   section-type: custom_application
   contents:
     document:
@@ -262,7 +262,7 @@ light-switch-app@thread_ftd_iw612:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@thread_ftd_iw610:
+light_switch_app@thread_ftd_iw610:
   section-type: custom_application
   contents:
     document:
@@ -273,7 +273,7 @@ light-switch-app@thread_ftd_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-light-switch-app@thread_ftd_k32w0:
+light_switch_app@thread_ftd_k32w0:
   section-type: custom_application
   contents:
     document:
@@ -285,7 +285,7 @@ light-switch-app@thread_ftd_k32w0:
     evkbmimxrt1060: []
 
 # --- Thread FTD with Factory Data Configuration ---
-light-switch-app@thread_ftd_factory_data:
+light_switch_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -295,7 +295,7 @@ light-switch-app@thread_ftd_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@thread_ftd_iw612_factory_data:
+light_switch_app@thread_ftd_iw612_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -306,7 +306,7 @@ light-switch-app@thread_ftd_iw612_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@thread_ftd_iw610_factory_data:
+light_switch_app@thread_ftd_iw610_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -317,7 +317,7 @@ light-switch-app@thread_ftd_iw610_factory_data:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-light-switch-app@thread_ftd_k32w0_factory_data:
+light_switch_app@thread_ftd_k32w0_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -329,7 +329,7 @@ light-switch-app@thread_ftd_k32w0_factory_data:
     evkbmimxrt1060: []
 
 # --- Thread FTD OTA Configuration ---
-light-switch-app@thread_ftd_ota:
+light_switch_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -339,7 +339,7 @@ light-switch-app@thread_ftd_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@thread_ftd_iw612_ota:
+light_switch_app@thread_ftd_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -350,7 +350,7 @@ light-switch-app@thread_ftd_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@thread_ftd_iw610_ota:
+light_switch_app@thread_ftd_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -363,7 +363,7 @@ light-switch-app@thread_ftd_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-light-switch-app@thread_ftd_ota_factory_data:
+light_switch_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -373,7 +373,7 @@ light-switch-app@thread_ftd_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-light-switch-app@thread_ftd_iw612_ota_factory_data:
+light_switch_app@thread_ftd_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -384,7 +384,7 @@ light-switch-app@thread_ftd_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-light-switch-app@thread_ftd_iw610_ota_factory_data:
+light_switch_app@thread_ftd_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:

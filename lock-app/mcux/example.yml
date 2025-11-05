@@ -6,7 +6,7 @@
 
 # This file describes the Matter Lock-App example application for the NXP MCUXpresso SDK.
 
-lock-app:
+lock_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/lock-app/mcux
@@ -89,7 +89,7 @@ lock-app:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD Configuration ---
-lock-app@thread_mtd:
+lock_app@thread_mtd:
   section-type: custom_application
   contents:
     document:
@@ -102,7 +102,7 @@ lock-app@thread_mtd:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-lock-app@thread_mtd_low_power:
+lock_app@thread_mtd_low_power:
   section-type: custom_application
   contents:
     document:
@@ -116,7 +116,7 @@ lock-app@thread_mtd_low_power:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD with Factory Data Configuration ---
-lock-app@thread_mtd_factory_data:
+lock_app@thread_mtd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -130,7 +130,7 @@ lock-app@thread_mtd_factory_data:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA Configuration ---
-lock-app@thread_mtd_ota:
+lock_app@thread_mtd_ota:
   section-type: custom_application
   contents:
     document:
@@ -143,7 +143,7 @@ lock-app@thread_mtd_ota:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-lock-app@thread_mtd_ota_low_power:
+lock_app@thread_mtd_ota_low_power:
   section-type: custom_application
   contents:
     document:
@@ -157,7 +157,7 @@ lock-app@thread_mtd_ota_low_power:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA with Factory Data Configuration ---
-lock-app@thread_mtd_ota_factory_data:
+lock_app@thread_mtd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -170,7 +170,7 @@ lock-app@thread_mtd_ota_factory_data:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-lock-app@thread_mtd_ota_factory_data_low_power:
+lock_app@thread_mtd_ota_factory_data_low_power:
   section-type: custom_application
   contents:
     document:

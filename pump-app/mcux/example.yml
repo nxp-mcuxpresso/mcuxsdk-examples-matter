@@ -6,7 +6,7 @@
 
 # This file describes the Matter Pump example application for the NXP MCUXpresso SDK.
 
-pump-app:
+pump_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/pump-app/mcux
@@ -106,7 +106,7 @@ pump-app:
     rdrw612bga: []
 
 # --- Wi-Fi Configuration ---
-pump-app@wifi_iw610:
+pump_app@wifi_iw610:
   section-type: custom_application
   contents:
     document:
@@ -117,7 +117,7 @@ pump-app@wifi_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-pump-app@wifi_iw416:
+pump_app@wifi_iw416:
   section-type: custom_application
   contents:
     document:
@@ -129,7 +129,7 @@ pump-app@wifi_iw416:
     evkbmimxrt1060: []
 
 # --- Wi-Fi with Factory Data Configuration ---
-pump-app@wifi_factory_data:
+pump_app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -139,7 +139,7 @@ pump-app@wifi_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@wifi_iw612_fdata:
+pump_app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -150,7 +150,7 @@ pump-app@wifi_iw612_fdata:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@wifi_iw610_fdata:
+pump_app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -161,7 +161,7 @@ pump-app@wifi_iw610_fdata:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-pump-app@wifi_iw416_fdata:
+pump_app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
@@ -173,7 +173,7 @@ pump-app@wifi_iw416_fdata:
     evkbmimxrt1060: []
 
 # --- Wi-Fi OTA Configuration ---
-pump-app@wifi_ota:
+pump_app@wifi_ota:
   section-type: custom_application
   contents:
     document:
@@ -183,7 +183,7 @@ pump-app@wifi_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@wifi_iw612_ota:
+pump_app@wifi_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -194,7 +194,7 @@ pump-app@wifi_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@wifi_iw610_ota:
+pump_app@wifi_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -207,7 +207,7 @@ pump-app@wifi_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Wi-Fi OTA with Factory Data Configuration ---
-pump-app@wifi_ota_factory_data:
+pump_app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -217,7 +217,7 @@ pump-app@wifi_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@wifi_iw612_ota_factory_data:
+pump_app@wifi_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -228,7 +228,7 @@ pump-app@wifi_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@wifi_iw610_ota_factory_data:
+pump_app@wifi_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -241,7 +241,7 @@ pump-app@wifi_iw610_ota_factory_data:
     evkcmimxrt1060: []
 
 # --- Thread FTD Configuration ---
-pump-app@thread_ftd:
+pump_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -251,7 +251,7 @@ pump-app@thread_ftd:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@thread_ftd_iw612:
+pump_app@thread_ftd_iw612:
   section-type: custom_application
   contents:
     document:
@@ -262,7 +262,7 @@ pump-app@thread_ftd_iw612:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@thread_ftd_iw610:
+pump_app@thread_ftd_iw610:
   section-type: custom_application
   contents:
     document:
@@ -273,7 +273,7 @@ pump-app@thread_ftd_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-pump-app@thread_ftd_k32w0:
+pump_app@thread_ftd_k32w0:
   section-type: custom_application
   contents:
     document:
@@ -285,7 +285,7 @@ pump-app@thread_ftd_k32w0:
     evkbmimxrt1060: []
 
 # --- Thread FTD with Factory Data Configuration ---
-pump-app@thread_ftd_factory_data:
+pump_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -295,7 +295,7 @@ pump-app@thread_ftd_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@thread_ftd_iw612_factory_data:
+pump_app@thread_ftd_iw612_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -306,7 +306,7 @@ pump-app@thread_ftd_iw612_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@thread_ftd_iw610_factory_data:
+pump_app@thread_ftd_iw610_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -317,7 +317,7 @@ pump-app@thread_ftd_iw610_factory_data:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-pump-app@thread_ftd_k32w0_factory_data:
+pump_app@thread_ftd_k32w0_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -329,7 +329,7 @@ pump-app@thread_ftd_k32w0_factory_data:
     evkbmimxrt1060: []
 
 # --- Thread FTD OTA Configuration ---
-pump-app@thread_ftd_ota:
+pump_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -339,7 +339,7 @@ pump-app@thread_ftd_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@thread_ftd_iw612_ota:
+pump_app@thread_ftd_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -350,7 +350,7 @@ pump-app@thread_ftd_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@thread_ftd_iw610_ota:
+pump_app@thread_ftd_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -363,7 +363,7 @@ pump-app@thread_ftd_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-pump-app@thread_ftd_ota_factory_data:
+pump_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -373,7 +373,7 @@ pump-app@thread_ftd_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-pump-app@thread_ftd_iw612_ota_factory_data:
+pump_app@thread_ftd_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -384,7 +384,7 @@ pump-app@thread_ftd_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-pump-app@thread_ftd_iw610_ota_factory_data:
+pump_app@thread_ftd_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:

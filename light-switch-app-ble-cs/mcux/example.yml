@@ -6,7 +6,7 @@
 
 # This file describes the Matter Light Switch App BLE CS example application for the NXP MCUXpresso SDK.
 
-light-switch-app-ble-cs:
+light_switch_app_ble_cs:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/light-switch-app-ble-cs/mcux
@@ -103,7 +103,7 @@ light-switch-app-ble-cs:
   boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
-light-switch-app-ble-cs@thread_ftd:
+light_switch_app_ble_cs@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -114,7 +114,7 @@ light-switch-app-ble-cs@thread_ftd:
   boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
-light-switch-app-ble-cs@thread_ftd_factory_data:
+light_switch_app_ble_cs@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -125,7 +125,7 @@ light-switch-app-ble-cs@thread_ftd_factory_data:
   boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
-light-switch-app-ble-cs@thread_ftd_ota:
+light_switch_app_ble_cs@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -136,7 +136,7 @@ light-switch-app-ble-cs@thread_ftd_ota:
   boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
-light-switch-app-ble-cs@thread_ftd_ota_factory_data:
+light_switch_app_ble_cs@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:

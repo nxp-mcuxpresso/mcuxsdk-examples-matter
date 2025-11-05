@@ -6,7 +6,7 @@
 
 # This file describes the Matter Contact-Sensor-App example application for the NXP MCUXpresso SDK.
 
-contact-sensor-app:
+contact_sensor_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/contact-sensor-app/mcux
@@ -95,7 +95,7 @@ contact-sensor-app:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD Configuration ---
-contact-sensor-app@thread_mtd:
+contact_sensor_app@thread_mtd:
   section-type: custom_application
   contents:
     document:
@@ -108,7 +108,7 @@ contact-sensor-app@thread_mtd:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-contact-sensor-app@thread_mtd_low_power:
+contact_sensor_app@thread_mtd_low_power:
   section-type: custom_application
   contents:
     document:
@@ -122,7 +122,7 @@ contact-sensor-app@thread_mtd_low_power:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD with Factory Data Configuration ---
-contact-sensor-app@thread_mtd_factory_data:
+contact_sensor_app@thread_mtd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -136,7 +136,7 @@ contact-sensor-app@thread_mtd_factory_data:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA Configuration ---
-contact-sensor-app@thread_mtd_ota:
+contact_sensor_app@thread_mtd_ota:
   section-type: custom_application
   contents:
     document:
@@ -149,7 +149,7 @@ contact-sensor-app@thread_mtd_ota:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-contact-sensor-app@thread_mtd_ota_low_power:
+contact_sensor_app@thread_mtd_ota_low_power:
   section-type: custom_application
   contents:
     document:
@@ -163,7 +163,7 @@ contact-sensor-app@thread_mtd_ota_low_power:
     mcxw72evk@cm33_core0: []
 
 # --- Thread MTD OTA with Factory Data Configuration ---
-contact-sensor-app@thread_mtd_ota_factory_data:
+contact_sensor_app@thread_mtd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -176,7 +176,7 @@ contact-sensor-app@thread_mtd_ota_factory_data:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
-contact-sensor-app@thread_mtd_ota_factory_data_low_power:
+contact_sensor_app@thread_mtd_ota_factory_data_low_power:
   section-type: custom_application
   contents:
     document:

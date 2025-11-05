@@ -6,7 +6,7 @@
 
 # This file describes the Matter Light switch combo example application for the NXP MCUXpresso SDK.
 
-light-switch-combo-app:
+light_switch_combo_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/light-switch-combo-app/mcux
@@ -87,7 +87,7 @@ light-switch-combo-app:
     rdrw612bga: []
 
 # --- Wi-Fi with Factory Data Configuration ---
-light-switch-combo-app@wifi_factory_data:
+light_switch_combo_app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -99,7 +99,7 @@ light-switch-combo-app@wifi_factory_data:
     rdrw612bga: []
 
 # --- Wi-Fi OTA Configuration ---
-light-switch-combo-app@wifi_ota:
+light_switch_combo_app@wifi_ota:
   section-type: custom_application
   contents:
     document:
@@ -111,7 +111,7 @@ light-switch-combo-app@wifi_ota:
     rdrw612bga: []
 
 # --- Wi-Fi OTA with Factory Data Configuration ---
-light-switch-combo-app@wifi_ota_factory_data:
+light_switch_combo_app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -123,7 +123,7 @@ light-switch-combo-app@wifi_ota_factory_data:
     rdrw612bga: []
 
 # --- Thread FTD Configuration ---
-light-switch-combo-app@thread_ftd:
+light_switch_combo_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -135,7 +135,7 @@ light-switch-combo-app@thread_ftd:
     rdrw612bga: []
 
 # --- Thread FTD with Factory Data Configuration ---
-light-switch-combo-app@thread_ftd_factory_data:
+light_switch_combo_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -147,7 +147,7 @@ light-switch-combo-app@thread_ftd_factory_data:
     rdrw612bga: []
 
 # --- Thread FTD OTA Configuration ---
-light-switch-combo-app@thread_ftd_ota:
+light_switch_combo_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -159,7 +159,7 @@ light-switch-combo-app@thread_ftd_ota:
     rdrw612bga: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-light-switch-combo-app@thread_ftd_ota_factory_data:
+light_switch_combo_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -171,7 +171,7 @@ light-switch-combo-app@thread_ftd_ota_factory_data:
     rdrw612bga: []
 
 # --- Thread FTD + Wi-Fi Border Router OTA Configuration ---
-light-switch-combo-app@thread_ftd_wifi_border_router_ota:
+light_switch_combo_app@thread_ftd_wifi_border_router_ota:
   section-type: custom_application
   contents:
     document:
@@ -183,7 +183,7 @@ light-switch-combo-app@thread_ftd_wifi_border_router_ota:
     rdrw612bga: []
 
 # --- Thread FTD + Wi-Fi Border Router OTA with Factory Data Configuration ---
-light-switch-combo-app@thread_ftd_wifi_border_router_ota_factory_data:
+light_switch_combo_app@thread_ftd_wifi_border_router_ota_factory_data:
   section-type: custom_application
   contents:
     document:

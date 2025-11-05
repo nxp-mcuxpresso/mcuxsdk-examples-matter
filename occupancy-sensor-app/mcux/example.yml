@@ -6,7 +6,7 @@
 
 # This file describes the Matter Occupancy sensor example application for the NXP MCUXpresso SDK.
 
-occupancy-sensor-app:
+occupancy_sensor_app:
   section-type: application
   contents:
     project-root-path: examples/matter_examples/occupancy-sensor-app/mcux
@@ -106,7 +106,7 @@ occupancy-sensor-app:
     rdrw612bga: []
 
 # --- Wi-Fi Configuration ---
-occupancy-sensor-app@wifi_iw610:
+occupancy_sensor_app@wifi_iw610:
   section-type: custom_application
   contents:
     document:
@@ -117,7 +117,7 @@ occupancy-sensor-app@wifi_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-occupancy-sensor-app@wifi_iw416:
+occupancy_sensor_app@wifi_iw416:
   section-type: custom_application
   contents:
     document:
@@ -129,7 +129,7 @@ occupancy-sensor-app@wifi_iw416:
     evkbmimxrt1060: []
 
 # --- Wi-Fi with Factory Data Configuration ---
-occupancy-sensor-app@wifi_factory_data:
+occupancy_sensor_app@wifi_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -139,7 +139,7 @@ occupancy-sensor-app@wifi_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@wifi_iw612_fdata:
+occupancy_sensor_app@wifi_iw612_fdata:
   section-type: custom_application
   contents:
     document:
@@ -150,7 +150,7 @@ occupancy-sensor-app@wifi_iw612_fdata:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@wifi_iw610_fdata:
+occupancy_sensor_app@wifi_iw610_fdata:
   section-type: custom_application
   contents:
     document:
@@ -161,7 +161,7 @@ occupancy-sensor-app@wifi_iw610_fdata:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-occupancy-sensor-app@wifi_iw416_fdata:
+occupancy_sensor_app@wifi_iw416_fdata:
   section-type: custom_application
   contents:
     document:
@@ -173,7 +173,7 @@ occupancy-sensor-app@wifi_iw416_fdata:
     evkbmimxrt1060: []
 
 # --- Wi-Fi OTA Configuration ---
-occupancy-sensor-app@wifi_ota:
+occupancy_sensor_app@wifi_ota:
   section-type: custom_application
   contents:
     document:
@@ -183,7 +183,7 @@ occupancy-sensor-app@wifi_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@wifi_iw612_ota:
+occupancy_sensor_app@wifi_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -194,7 +194,7 @@ occupancy-sensor-app@wifi_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@wifi_iw610_ota:
+occupancy_sensor_app@wifi_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -207,7 +207,7 @@ occupancy-sensor-app@wifi_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Wi-Fi OTA with Factory Data Configuration ---
-occupancy-sensor-app@wifi_ota_factory_data:
+occupancy_sensor_app@wifi_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -217,7 +217,7 @@ occupancy-sensor-app@wifi_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@wifi_iw612_ota_factory_data:
+occupancy_sensor_app@wifi_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -228,7 +228,7 @@ occupancy-sensor-app@wifi_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@wifi_iw610_ota_factory_data:
+occupancy_sensor_app@wifi_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -241,7 +241,7 @@ occupancy-sensor-app@wifi_iw610_ota_factory_data:
     evkcmimxrt1060: []
 
 # --- Thread FTD Configuration ---
-occupancy-sensor-app@thread_ftd:
+occupancy_sensor_app@thread_ftd:
   section-type: custom_application
   contents:
     document:
@@ -251,7 +251,7 @@ occupancy-sensor-app@thread_ftd:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@thread_ftd_iw612:
+occupancy_sensor_app@thread_ftd_iw612:
   section-type: custom_application
   contents:
     document:
@@ -262,7 +262,7 @@ occupancy-sensor-app@thread_ftd_iw612:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@thread_ftd_iw610:
+occupancy_sensor_app@thread_ftd_iw610:
   section-type: custom_application
   contents:
     document:
@@ -273,7 +273,7 @@ occupancy-sensor-app@thread_ftd_iw610:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-occupancy-sensor-app@thread_ftd_k32w0:
+occupancy_sensor_app@thread_ftd_k32w0:
   section-type: custom_application
   contents:
     document:
@@ -285,7 +285,7 @@ occupancy-sensor-app@thread_ftd_k32w0:
     evkbmimxrt1060: []
 
 # --- Thread FTD with Factory Data Configuration ---
-occupancy-sensor-app@thread_ftd_factory_data:
+occupancy_sensor_app@thread_ftd_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -295,7 +295,7 @@ occupancy-sensor-app@thread_ftd_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@thread_ftd_iw612_factory_data:
+occupancy_sensor_app@thread_ftd_iw612_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -306,7 +306,7 @@ occupancy-sensor-app@thread_ftd_iw612_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@thread_ftd_iw610_factory_data:
+occupancy_sensor_app@thread_ftd_iw610_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -317,7 +317,7 @@ occupancy-sensor-app@thread_ftd_iw610_factory_data:
       - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
-occupancy-sensor-app@thread_ftd_k32w0_factory_data:
+occupancy_sensor_app@thread_ftd_k32w0_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -329,7 +329,7 @@ occupancy-sensor-app@thread_ftd_k32w0_factory_data:
     evkbmimxrt1060: []
 
 # --- Thread FTD OTA Configuration ---
-occupancy-sensor-app@thread_ftd_ota:
+occupancy_sensor_app@thread_ftd_ota:
   section-type: custom_application
   contents:
     document:
@@ -339,7 +339,7 @@ occupancy-sensor-app@thread_ftd_ota:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@thread_ftd_iw612_ota:
+occupancy_sensor_app@thread_ftd_iw612_ota:
   section-type: custom_application
   contents:
     document:
@@ -350,7 +350,7 @@ occupancy-sensor-app@thread_ftd_iw612_ota:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@thread_ftd_iw610_ota:
+occupancy_sensor_app@thread_ftd_iw610_ota:
   section-type: custom_application
   contents:
     document:
@@ -363,7 +363,7 @@ occupancy-sensor-app@thread_ftd_iw610_ota:
     evkcmimxrt1060: []
 
 # --- Thread FTD OTA with Factory Data Configuration ---
-occupancy-sensor-app@thread_ftd_ota_factory_data:
+occupancy_sensor_app@thread_ftd_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -373,7 +373,7 @@ occupancy-sensor-app@thread_ftd_ota_factory_data:
   boards:
     frdmrw612: []
     rdrw612bga: []
-occupancy-sensor-app@thread_ftd_iw612_ota_factory_data:
+occupancy_sensor_app@thread_ftd_iw612_ota_factory_data:
   section-type: custom_application
   contents:
     document:
@@ -384,7 +384,7 @@ occupancy-sensor-app@thread_ftd_iw612_ota_factory_data:
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
-occupancy-sensor-app@thread_ftd_iw610_ota_factory_data:
+occupancy_sensor_app@thread_ftd_iw610_ota_factory_data:
   section-type: custom_application
   contents:
     document:
