@@ -3,6 +3,7 @@
 - [Matter NXP Lighting Example Application](#matter-nxp-lighting-example-application)
   - [Overview](#overview)
   - [Supported Platforms](#supported-platforms)
+  - [Environment Setup, Building, and Testing](#environment-setup-building-and-testing)
   - [Data Model](#data-model)
   - [Supported Configurations](#supported-configurations)
 
@@ -48,6 +49,11 @@ The On/Off Light example is supported on the following platforms:
 
 For details on platform-specific requirements and configurations, please refer
 to the respective platform's readme.
+
+## Environment Setup, Building, and Testing
+
+All the information required to set up the environment, build the application,
+and test, are available in the [Matter Documentation for NXP MCU platforms](https://docs.mcuxpresso.nxp.com/matter/latest/html/index.html)
 
 ## Data Model
 

@@ -13,7 +13,6 @@ The Laundry Dryer example is supported on the following platforms :
 
 | NXP platform        | Dedicated readme                                                             |
 | ------------------- | ---------------------------------------------------------------------------- |
-| RW61x (Zephyr OS)   | [NXP Zephyr Guide](../../../middleware/matter/docs/platforms/nxp/nxp_zephyr_guide.md)          |
 | RW61x (FreeRTOS OS) | [NXP RW61x (FreeRTOS) Guide](../../../middleware/matter/docs/platforms/nxp/nxp_rw61x_guide.md) |
 | RT1170              | [NXP RT1170 Guide](../../../middleware/matter/docs/platforms/nxp/nxp_rt1170_guide.md)          |
 | RT1060              | [NXP RT1060 Guide](../../../middleware/matter/docs/platforms/nxp/nxp_rt1060_guide.md)          |
@@ -24,12 +23,7 @@ to the respective platform's readme.
 ## Environment Setup, Building, and Testing
 
 All the information required to set up the environment, build the application,
-and test it can be found in the common readme for NXP platforms :
-
--   NXP FreeRTOS Platforms : Refer to the
-    [CHIP NXP Examples Guide for FreeRTOS platforms](../../../docs/platforms/nxp/nxp_examples_freertos_platforms.md)
--   NXP Zephyr Platform : Refer to the
-    [NXP Zephyr Application](../../../docs/platforms/nxp/nxp_zephyr_guide.md)
+and test, are available in the [Matter Documentation for NXP MCU platforms](https://docs.mcuxpresso.nxp.com/matter/latest/html/index.html)
 
 > Note : Matter-over-WiFi + Thread Border Router configuration is not supported
 > in this application.
