@@ -25,11 +25,11 @@ and test it can be found in the common readme for NXP platforms :
 
 ## Download and patch BLE CS restricted access SDK zip
 
-- Go to [MCUXpresso SDK Builder](https://kex-stage.nxp.com/).
+- Go to [MCUXpresso SDK Builder](https://mcuxpresso.nxp.com).
 - Click `Select Development Board`, type `MCX-W72-EVK` in the input bar and select the board
-- The selection will appear in the right, select the 25.09.00 SDK version with Tag v25.09.00_RC2 and click `BUILD SDK`. [Select board](./main/images/board-select.png)
-- In the new page select `MCUXpresso IDE` in the `Toolchain/IDE` tab, desired `Host OS` and select all SDK packages, then click `BUILD SDK`.
-- Download the zip once ready. [Build SDK](./main/images/sdk-builder.png)
+- The selection will appear below, select the 25.09.00 SDK version with Tag v25.09.00 and click `BUILD SDK`. [Select board](./main/images/board-select.png)
+- In the new page select `MCUXpresso IDE` in the `Toolchain/IDE` tab, desired `Host OS` and select all SDK packages. Scroll down and click `BUILD SDK`. Please ask your NXP representative in case of issue to access/select the `Wireless Localization` component. [Build SDK](./main/images/sdk-builder.png)
+- Download the zip once ready.
 - Unzip and open file `middleware/wireless/bluetooth/application/common/lcl/app_localization_algo.c`. Comment lines 41-51, 68-81, 86-100.
 - Copy the `bluetooth` folder from the SDK ZIP into the sdk-next path `mcuxsdk/middleware/wireless/bluetooth_cs`.
 
