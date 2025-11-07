@@ -21,19 +21,18 @@ provides a prototype application that demonstrates device commissioning and
 different cluster control.
 
 The light bulb device communicates with clients over a low-power, 802.15.4 Thread network.
-
 It can be commissioned into an existing Matter network using a controller such
 as `chip-tool`.
 
 This example implements a `User-Intent Commissioning Flow`, meaning that the user
-has to press a button in order for the device to be ready for commissioning. The
-initial commissioning is done through `ble-thread` pairing method.
+is required to press a button on the device in order to get it ready for commissioning. The
+initial commissioning is usually performed using the `ble-thread` pairing method.
 
 The Thread network dataset will be transferred on the device using a secure
 session over Bluetooth LE. In order to start the commissioning process, the user
 must enable BLE advertising on the device manually. To pair successfully, the
 commissioner must know the commissioning information corresponding to the
-device: setup passcode and discriminator. This data is usually encoded within a
+device: setup passcode and/or discriminator. This data is usually encoded within a
 QR code or printed to the device's UART console.
 
 <a name="supported-platforms"></a>

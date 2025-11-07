@@ -5,6 +5,8 @@
   - [Supported Platforms](#supported-platforms)
   - [Environment Setup, Building, and Testing](#environment-setup-building-and-testing)
   - [Data Model](#data-model)
+  - [Long Idle Time ICD Support](#long-idle-time-icd-support)
+  - [Low Power](#low-power)
   - [Supported Configurations](#supported-configurations)
 
 <a name="overview"></a>
@@ -20,20 +22,19 @@ The example is based on
 provides a prototype application that demonstrates device commissioning and
 different cluster control.
 
-The contact sensor communicates with clients over a low-power, 802.15.4 Thread network.
-
-It can be commissioned into an existing Matter network using a controller such
+This contact sensor communicates with clients over a low-power, 802.15.4 Thread network.
+It can be commissioned into an existing Matter network using a controller, such
 as `chip-tool`.
 
 This example implements a `User-Intent Commissioning Flow`, meaning that the user
-has to press a button in order for the device to be ready for commissioning. The
-initial commissioning is done through `ble-thread` pairing method.
+is required to press a button on the device in order to get it ready for commissioning. The
+initial commissioning is usually performed using the `ble-thread` pairing method.
 
 The Thread network dataset will be transferred on the device using a secure
 session over Bluetooth LE. In order to start the commissioning process, the user
 must enable BLE advertising on the device manually. To pair successfully, the
 commissioner must know the commissioning information corresponding to the
-device: setup passcode and discriminator. This data is usually encoded within a
+device: setup passcode and/or discriminator. This data is usually encoded within a
 QR code or printed to the device's UART console.
 
 <a name="supported-platforms"></a>
@@ -66,8 +67,61 @@ There are two available data models that can be used by the application:
 | `zap-lit/contact-sensor-app.zap` | Data model for LIT ICD support |
 | `zap-sit/contact-sensor-app.zap` | Data model for SIT ICD support |
 
-The selection is done automatically by the build system based on the ICD
-configuration.
+The data model is selected automatically by the build system based on the user ICD flavor build option (SIT or LIT).
+
+<a name="long-idle-time-icd-support"></a>
+
+## Long Idle Time ICD Support
+
+By default, the application is compiled as a SIT ICD (Short Idle Time
+Intermittently Connected Device).
+
+The following is a list of ICD configuration build options. These options can be provided on the
+build command line to override default values. Please refer to your [platform guide](#supported-platforms)
+for details on the build process.
+
+| Build option                            | Default value | Description                                                                                                |
+| --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
+| `CONFIG_CHIP_ICD_SLOW_POLL_INTERVAL`    | 2000 (ms)     | OT Idle Mode poll interval duration                                                                        |
+| `CONFIG_CHIP_ICD_FAST_POLLING_INTERVAL` | 500 (ms)      | OT Active Mode poll interval duration                                                                      |
+| `CONFIG_CHIP_ICD_IDLE_MODE_DURATION`    | 600 (s)       | Idle Mode Interval duration                                                                                |
+| `CONFIG_CHIP_ICD_ACTIVE_MODE_DURATION`  | 10000 (ms)    | Active Mode Interval duration                                                                              |
+| `CONFIG_CHIP_ICD_ACTIVE_MODE_THRESHOLD` | 5000 (ms)     | Active Mode Threshold duration                                                                             |
+| `CONFIG_CHIP_ICD_CLIENTS_PER_FABRIC`    | 2             | Registration slots per fabric                                                                              |
+| `CONFIG_CHIP_ICD_DSLS_SUPPORT`          | n             | Enable LIT ICD DSLS support                                                                                |
+| `CONFIG_CHIP_PERSISTENT_SUBSCRIPTIONS`  | y             | Try once to re-establish subscriptions from the server side after reboot. May be disabled for LIT use case |
+
+If LIT ICD support is required then `prj_thread_mtd_low_power_lit.conf` build configuration
+file should be used when building the application. This will automatically configure the
+above parameters to define a LIT device. You can still override these values on the build
+command line in case you want to use different values from the defaults.
+
+| Build option                            | LIT ICD default value |
+| --------------------------------------- | --------------------- |
+| `CONFIG_CHIP_ICD_SLOW_POLL_INTERVAL`    | 15000 (ms)            |
+| `CONFIG_CHIP_ICD_FAST_POLLING_INTERVAL` | 500 (ms)              |
+| `CONFIG_CHIP_ICD_IDLE_MODE_DURATION`    | 3600 (s)              |
+| `CONFIG_CHIP_ICD_ACTIVE_MODE_DURATION`  | 15000 (ms)            |
+| `CONFIG_CHIP_ICD_ACTIVE_MODE_THRESHOLD` | 30000 (ms)            |
+
+<a name="low-power"></a>
+
+## Low Power
+
+This example also offers the possibility to run in low power mode. This means
+that the device will use deep sleep/power down most of the time to aggresively lower the power
+consumption.
+
+Low power support is enabled at build time when using the build configuration files
+appropriate for low-power app configurations. Please refer to the
+[Supported Configurations](#supported-configurations)
+for details on the available build configurations.
+
+In order to maintain low power consumption, the UI LEDs are disabled and
+device log and Matter CLI will not be available. For debugging purposes device log can
+be forced using the `CONFIG_LOG=y` build option, but this might affect low power timings.
+Also, please note that once the application is flashed onto the board the debugger
+might disconnect when the board enters low power.
 
 ## Supported Configurations
 
