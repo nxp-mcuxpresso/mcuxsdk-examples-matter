@@ -35,10 +35,7 @@ to the respective platform's readme.
 ## Environment Setup, Building, and Testing
 
 All the information required to set up the environment, build the application,
-and test it can be found in the common readme for NXP platforms :
-
--   NXP FreeRTOS Platforms : Refer to the
-    [CHIP NXP Examples Guide for FreeRTOS platforms](../../../middleware/matter/docs/platforms/nxp/nxp_examples_freertos_platforms.md)
+and test, are available in the [Matter Documentation for NXP MCU platforms](https://docs.mcuxpresso.nxp.com/matter/latest/html/index.html)
 
 <a name="data-model"></a>
 
