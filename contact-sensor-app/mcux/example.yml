@@ -32,10 +32,10 @@ contact_sensor_app:
       destination: common
     - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
-      board: [frdmmcxw71, frdmmcxw72]
+      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
     - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
       destination: ldscripts/connectivity.ld
-      board: [frdmmcxw71, frdmmcxw72]
+      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
     replacements:
     - file: CMakeLists.txt
       replace:
@@ -61,7 +61,7 @@ contact_sensor_app:
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/connectivity.ld"
-      board: [frdmmcxw71, frdmmcxw72]
+      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
     freestanding_copied_folders:
     -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
