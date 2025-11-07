@@ -17,10 +17,7 @@ To build the NXP Light Switch BLE CS example follow the steps:
 ## Environment Setup
 
 All the information required to set up the environment, build the application,
-and test it can be found in the common readme for NXP platforms :
-
--   NXP FreeRTOS Platforms : Refer to the
-    [Matter NXP Examples Guide for FreeRTOS platforms](../../../middleware/matter/docs/platforms/nxp/nxp_examples_freertos_platforms.md)
+and test, are available in the [Matter Documentation for NXP MCU platforms](https://docs.mcuxpresso.nxp.com/matter/latest/html/index.html)
 
 
 ## Download and patch BLE CS restricted access SDK zip
@@ -39,10 +36,10 @@ and test it can be found in the common readme for NXP platforms :
 - The example is located into `examples/light-switch-app-ble-cs`
 - Use `west list` to see the building variants. `mcxw72evk` or `frdmmcxw72` are the available boards.
 - Build the app: eg `west build -d build_matter -b mcxw72evk examples/matter_examples/light-switch-app-ble-cs/mcux -DCONF_FILE=<absolute_path_to>/prj_thread_ftd.conf -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n -Dcore_id=cm33_core0 -DCONFIG_CHIP_LIB_SHELL=n`.
-- `-DCONFIG_CHIP_LIB_SHELL=n` is added to redirect the matter logs to the usb serial, this is easier for distance measurement visualisation. If this config is removed, matter cli is available on the usb serial and a USB-UART bridge is needed to see the logs, see `Additional UART interface` from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md)
+- `-DCONFIG_CHIP_LIB_SHELL=n` is added to redirect the matter logs to the usb serial, this is easier for distance measurement visualisation. If this config is removed, matter cli is available on the usb serial and a USB-UART bridge is needed to see the logs, see `UART Ports` from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md)
 - The application binary will be located into `./build_matter/app.bin`.
 - Use the NBU binary from the SDK zip or sdk-next: `middleware/wireless/ieee-802.15.4/bin/mcxw72/mcxw72_nbu_ble_full_15_4_dyn.bin`
-- Use the instructions from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md) for flashing on the MCXW72 board.
+- Use the instructions from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md) for flashing on the MCXW72 board.
 
 ## Build the loc_user device BLE CS example
 
@@ -56,7 +53,7 @@ and test it can be found in the common readme for NXP platforms :
 - After the project is built, go into Debug, right click on `mcxw72evk_loc_user_device_bm.axf`, go to Binary Utilities > Create binary to convert built file to binary format. [Convert to binary](./main/images/create-binary.png)
 - Use this application binary: `Debug/mcxw72evk_loc_user_device_bm.bin`.
 - Use the NBU binary from the SDK zip or sdk-next: `middleware/wireless/ble_controller/bin/mcxw72_nbu_ble_all_hosted.bin`.
-- Use the instructions from [README.md](../../../middleware/matter/examples/lighting-app/nxp/mcxw72/README.md) for flashing on the MCXW72 board.
+- Use the instructions from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md) for flashing on the MCXW72 board.
 
 ## Matter BLE CS example
 
