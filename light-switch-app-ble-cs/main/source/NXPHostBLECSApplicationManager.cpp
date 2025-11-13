@@ -28,6 +28,7 @@ extern "C" {
 #include "app_localization.h"
 }
 
+#include "app_localization_algo.h"
 #include "ble_sig_defines.h"
 #include "gap_types.h"
 #include "gatt_db_app_interface.h"
