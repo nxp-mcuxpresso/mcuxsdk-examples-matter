@@ -28,18 +28,11 @@ extern "C" {
 #include "app_localization.h"
 }
 
-#include "app_localization_algo.h"
 #include "ble_sig_defines.h"
 #include "gap_types.h"
 #include "gatt_db_app_interface.h"
 #include "gatt_db_handles.h"
 #include "EmbeddedTypes.h"
-#include "fwk_platform.h"
-#include "fsl_device_registers.h"
-
-#define SMU2_CM33_BASE_ADDR     0x489C0000ULL
-#define SMU2_CM33_END_ADDR      0x489CA000ULL
-#define SMU2_MAIR_IDX           1
 
 extern "C"
 {
@@ -69,23 +62,6 @@ void BLEApplicationManager::Init(void)
 {
     auto * bleManager = &chip::DeviceLayer::Internal::BLEMgrImpl();
     bleResult_t status = gBleSuccess_c;
-
-    /* Remap SMU2 memory as system memory */
-    ARM_MPU_SetRegionEx(MPU, SMU2_MAIR_IDX,
-                        SMU2_CM33_BASE_ADDR,
-                        SMU2_CM33_END_ADDR |
-                        (MPU_RLAR_EN_Msk << MPU_RLAR_EN_Pos) |
-                            (SMU2_MAIR_IDX << MPU_RLAR_AttrIndx_Pos));
-
-    ARM_MPU_SetMemAttrEx(MPU,
-                         SMU2_MAIR_IDX,
-                         ARM_MPU_ATTR(ARM_MPU_ATTR_NON_CACHEABLE,
-                                      ARM_MPU_ATTR_NON_CACHEABLE));
-
-    ARM_MPU_Enable(MPU_CTRL_PRIVDEFENA_Msk);
-
-    /* Disable low power on NBU to access SMU2 memory */
-    PLATFORM_DisableControllerLowPower();
 
     /* Register BLE application callbacks*/
     bleManager->RegisterAppCallbacks(app_ble_init_callback, app_connection_callback, app_gap_callback, app_gatt_callback);
