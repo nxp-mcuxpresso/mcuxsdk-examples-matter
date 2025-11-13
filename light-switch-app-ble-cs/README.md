@@ -29,6 +29,7 @@ and test, are available in the [Matter Documentation for NXP MCU platforms](http
 - Download the zip once ready.
 - Unzip and open file `middleware/wireless/bluetooth/application/common/lcl/app_localization_algo.c`. Comment lines 41-51, 68-81, 86-100.
 - Copy the `bluetooth` folder from the SDK ZIP into the sdk-next path `mcuxsdk/middleware/wireless/bluetooth_cs`.
+- Use [app_lce_init.diff](./patches/app_lce_init.diff) to patch examples/_common/project_segments/wireless/wireless_mcu/app_common/app_lce_init.c
 
 ## Build the MCXW72 NXP Light Switch BLE CS example
 
