@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2025 Project CHIP Authors
-# Copyright 2025 NXP
+# Copyright (c) 2025-2026 Project CHIP Authors
+# Copyright 2025-2026 NXP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -102,6 +102,7 @@ target_sources(app
     ${NXP_EXAMPLE_DIR}/main/source/NxpAliroDelegate.cpp
     ${NXP_EXAMPLE_DIR}/main/source/DeviceCallbacksAliro.cpp
     ${NXP_EXAMPLE_DIR}/main/source/ZclCallbacks.cpp
+    ${NXP_EXAMPLE_DIR}/main/source/MemconfigAliro.cpp
     ${ALL_CLUSTERS_COMMON_DIR}/src/binding-handler.cpp
     ${CHIP_ROOT}/examples/lock-app/lock-common/src/LockEndpoint.cpp
     ${CHIP_ROOT}/examples/lock-app/lock-common/src/LockManager.cpp
@@ -116,6 +117,7 @@ target_compile_definitions(app PRIVATE
     -DALIRO_PHONE_RANGING=1
     -DCONFIG_APP_TASK_CUSTOM_SINGLETON_IMPL=1
     -DCONFIG_APP_DEVICE_CALLBACKS_CUSTOM_SINGLETON_IMPL=1
+    -DALIRO_MIDDLEWARE_CUSTOM_MEMORY_MANAGEMENT=1
 )
 
 # Set NXP_SDK_ROOT for the ALIRO SDK CMake file
@@ -128,7 +130,6 @@ include(${ALIRO_SDK_ROOT}/aliro_sdk.cmake)
 target_compile_definitions(app PRIVATE ${ALIRO_SDK_COMPILE_DEFINITIONS})
 
 target_include_directories(app PRIVATE
-    ${NXP_EXAMPLE_DIR}/aliro/src
     ${ALIRO_SDK_INCLUDE_DIRS}
 )
 
