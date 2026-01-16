@@ -22,7 +22,6 @@
 #include <app/clusters/door-lock-server/door-lock-server.h>
 #include <app/data-model/Nullable.h>
 
-#include "aliro_core.h"
 #include "NxpAliroDelegate.h"
 
 #if !CHIP_CONFIG_ENABLE_ICD_SERVER
@@ -43,17 +42,19 @@ using namespace chip::app::DataModel;
 
 namespace LockApp {
 
-void AppTaskAliro::AppMatter_AliroStateMachine(aliro_transport_interface_type_t aTransport, aliro_reader_status_state_t aReaderState)
+#if 0
+void AppTaskAliro::AppMatter_AliroStateMachine()
 {
     Nullable<DoorLock::DlLockState> state(DlLockState::kUnlocked);
     DoorLock::Attributes::LockState::Get(APP_DEVICE_TYPE_ENDPOINT, state);
 
+    bool bDoorUnLocked = NxpAliroDelegate::Instance().IsDoorUnlocked();
     switch (state.Value())
     {
         case DlLockState::kUnlocked:
         case DlLockState::kUnlatched:
         case DlLockState::kNotFullyLocked:
-            if (aReaderState == kAliro_ReaderStatusState_Secured)
+            if (bDoorUnLocked == false)
             {
                 bAliroOperation = true;
                 DoorLockServer::Instance().SetLockState(1, DlLockState::kLocked, OperationSourceEnum::kAliro, NullNullable, NullNullable,
@@ -62,7 +63,7 @@ void AppTaskAliro::AppMatter_AliroStateMachine(aliro_transport_interface_type_t 
         break;
 
         case DlLockState::kLocked:
-            if (aReaderState == kAliro_ReaderStatusState_Unsecured)
+            if (bDoorUnLocked == true)
             {
                 bAliroOperation = true;
                 DoorLockServer::Instance().SetLockState(1, DlLockState::kUnlocked, OperationSourceEnum::kAliro, NullNullable, NullNullable,
@@ -74,14 +75,12 @@ void AppTaskAliro::AppMatter_AliroStateMachine(aliro_transport_interface_type_t 
         break;
     }
 }
+#endif
 
 void AppTaskAliro::PostInitMatterStack()
 {
     // Call parent implementation first
     AppTask::PostInitMatterStack();
-
-    // Set up Aliro-specific callback using a lambda to bind to this instance
-    aliro_set_door_lock_external_cb(AppTaskAliro::AppMatter_AliroStateMachine);
 
     NxpAliroDelegate::Instance().RestoreAliroReaderConfig();
 }

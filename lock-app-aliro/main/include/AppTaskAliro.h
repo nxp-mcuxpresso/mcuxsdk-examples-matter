@@ -20,7 +20,6 @@
 #pragma once
 
 #include "AppTask.h"
-#include "aliro_core.h"
 
 namespace LockApp {
 
@@ -33,7 +32,9 @@ public:
     
     // This returns an instance of this class.
     static AppTaskAliro & GetDefaultInstance();
-    static void AppMatter_AliroStateMachine(aliro_transport_interface_type_t aTransport, aliro_reader_status_state_t aReaderState);
+#if 0
+    static void AppMatter_AliroStateMachine();
+#endif
 private:
 
     static AppTaskAliro sAppTaskAliro;

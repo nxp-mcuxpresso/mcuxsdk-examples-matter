@@ -33,7 +33,7 @@
 
 #include <lib/support/CodeUtils.h>
 
-#include "aliro_core.h"
+#include "NxpAliroDelegate.h"
 
 extern bool bAliroOperation;
 
@@ -69,12 +69,12 @@ void DeviceCallbacksAliro::PostAttributeChangeCallback(chip::EndpointId endpoint
             switch (lockState)
             {
                 case DlLockState::kLocked:
-                    aliro_handle_external_door_lock_event(kAliro_ReaderStatusState_Secured);
+                    NxpAliroDelegate::Instance().SetDoorLockState(true);
                     break;
 
                 case DlLockState::kUnlocked:
                 case DlLockState::kUnlatched:
-                    aliro_handle_external_door_lock_event(kAliro_ReaderStatusState_Unsecured);
+                    NxpAliroDelegate::Instance().SetDoorLockState(false);
                     break;
                 default:
                     ChipLogError(DeviceLayer, "Invalid lock state received");

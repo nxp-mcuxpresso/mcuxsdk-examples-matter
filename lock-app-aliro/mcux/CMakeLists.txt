@@ -116,13 +116,18 @@ target_compile_definitions(app PRIVATE
     -DALIRO_PHONE_RANGING=1
     -DCONFIG_APP_TASK_CUSTOM_SINGLETON_IMPL=1
     -DCONFIG_APP_DEVICE_CALLBACKS_CUSTOM_SINGLETON_IMPL=1
+    -DALIRO_APP_ENABLE_DUT_CLI=0
+)
+
+target_compile_options(app PRIVATE
+    -include ${ALIRO_SDK_ROOT}/examples/common_sources/aliro/aliro_app_config.h
 )
 
 # Set NXP_SDK_ROOT for the ALIRO SDK CMake file
 set(NXP_SDK_ROOT ${SdkRootDirPath})
 
 # Include the ALIRO SDK CMake file
-include(${ALIRO_SDK_ROOT}/aliro_sdk.cmake)
+include(${ALIRO_SDK_ROOT}/aliro_sdk_remote.cmake)
 
 # Apply any ALIRO SDK compile definitions
 target_compile_definitions(app PRIVATE ${ALIRO_SDK_COMPILE_DEFINITIONS})
