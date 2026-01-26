@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../../../../scripts/data_schema/example_description_schema.json
+#
+# Copyright 2026 NXP
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+# This file describes the Matter unit_tests example application for the NXP MCUXpresso SDK.
+
+unit_tests:
+  section-type: application
+  contents:
+    project-root-path: examples/matter_examples/unit_tests/mcux
+    meta_path: examples/matter_examples/unit_tests/mcux
+    document:
+      name: unit tests
+      category: matter_examples
+      brief: The NXP unit tests example is based on Project CHIP and NXP SDK.
+      example_readme:
+      - examples/matter_examples/unit_tests/README.md
+    toolchains:
+    - +armgcc@debug
+    - +armgcc@release
+    - -armgcc@flash_debug
+    - -armgcc@flash_release
+    - -armgcc@flexspi_nor_debug
+    - -armgcc@flexspi_nor_release
+    - -armgcc@sdram_debug
+    - -armgcc@sdram_release
+    - -iar@debug
+    - -iar@release
+    - -iar@flash_debug
+    - -iar@flash_release
+    - -iar@flexspi_nor_debug
+    - -iar@flexspi_nor_release
+    - -iar@sdram_debug
+    - -iar@sdram_release
+    - -mdk@debug
+    - -mdk@release
+    - -mdk@flash_debug
+    - -mdk@flash_release
+    - -mdk@flexspi_nor_debug
+    - -mdk@flexspi_nor_release
+    - -mdk@sdram_debug
+    - -mdk@sdram_release
+  boards:
+    evkbmimxrt1060: []
+    evkbmimxrt1170@cm7: []
+    evkcmimxrt1060: []
+    frdmrw612: []
+    rdrw612bga: []
+
+# --- Default Configuration for MCXW71/MCXW72 ---
+unit_tests@mcx_default:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Uses default platform settings. For more details, refer to the platform-specific guide.
+      extra_build_args:
+      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+  boards:
+    frdmmcxw71: []
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+
