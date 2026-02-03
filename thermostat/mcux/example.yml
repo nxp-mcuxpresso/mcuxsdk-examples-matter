@@ -518,6 +518,30 @@ thermostat@se05x_wifi_default_crypto:
       - -DCONFIG_CHIP_SE05X=y
   boards:
     frdmrw612: []
+thermostat@se05x_wifi_iw610_default_crypto:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Wi-Fi configuration with IW610 transceiver and SE05X secure element
+      extra_build_args:
+      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+      - -DCONFIG_CHIP_SE05X=y
+  boards:
+    evkcmimxrt1060: []
+thermostat@se05x_thread_ftd_wifi_border_router_iw610_ota_default_crypto:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread FTD configuration with IW610 transceiver, Wi-Fi border router, OTA updates and SE05X secure element
+      extra_build_args:
+      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
+      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+      - -DCONFIG_CHIP_SE05X=y
+  boards:
+    evkcmimxrt1060: []
 
 # --- SE05X with Wi-Fi All Crypto Configuration ---
 thermostat@se05x_wifi_all_crypto:
