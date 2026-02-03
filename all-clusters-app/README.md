@@ -38,7 +38,7 @@ and test, are available in the [Matter Documentation for NXP MCU platforms](http
 | `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | evkbmimxrt1060, evkbmimxrt1170@cm7, evkcmimxrt1060, frdmrw612, rdrw612bga | Default | None |
 | `wifi_iw610` | Wi-Fi configuration with IW610 transceiver | evkcmimxrt1060 | `prj_wifi.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y`<br>`-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y` |
 | `wifi_iw416` | Wi-Fi configuration with IW416 transceiver | evkbmimxrt1060 | `prj_wifi.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y` |
-| `wifi_factory_data` | Wi-Fi configuration with factory data provisioning | frdmrw612, bitrdrw612bga | `prj_wifi_fdata.conf` | None |
+| `wifi_factory_data` | Wi-Fi configuration with factory data provisioning | frdmrw612, rdrw612bga | `prj_wifi_fdata.conf` | None |
 | `wifi_iw612_fdata` | Wi-Fi configuration with IW612 transceiver and factory data | evkcmimxrt1060, evkbmimxrt1170@cm7 | `prj_wifi_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y` |
 | `wifi_iw610_fdata` | Wi-Fi configuration with IW610 transceiver and factory data | evkcmimxrt1060 | `prj_wifi_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y`<br>`-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y` |
 | `wifi_iw416_fdata` | Wi-Fi configuration with IW416 transceiver and factory data | evkbmimxrt1060 | `prj_wifi_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y` |
@@ -63,4 +63,3 @@ and test, are available in the [Matter Documentation for NXP MCU platforms](http
 | `thread_ftd_iw612_ota_factory_data` | Thread FTD configuration with IW612 transceiver, OTA updates, and factory data | evkcmimxrt1060, evkbmimxrt1170@cm7 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y` |
 | `thread_ftd_iw610_ota_factory_data` | Thread FTD configuration with IW610 transceiver, OTA updates, and factory data | evkcmimxrt1060 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y`<br>`-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y` |
 | `se05x_wifi_default_crypto` | Wi-Fi configuration with SE05X secure element | frdmrw612 | `prj_wifi.conf` | `-DCONFIG_CHIP_SE05X=y` |
-| `se05x_wifi_all_crypto` | Wi-Fi configuration with SE05X secure element and enhanced crypto operations | frdmrw612 | `prj_wifi.conf` | `-DCONFIG_CHIP_SE05X=y`<br>`-DCONFIG_CHIP_SE05X_RND_GEN=y`<br>`-DCONFIG_CHIP_SE05X_HKDF_SHA256=y`<br>`-DCONFIG_CHIP_SE05X_HMAC_SHA256=y`<br>`-DCONFIG_CHIP_SE05X_DEVICE_ATTESTATION=y` |

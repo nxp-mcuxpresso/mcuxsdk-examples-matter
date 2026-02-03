@@ -15,89 +15,103 @@ thermostat:
       name: thermostat
       category: matter_examples
       brief: The NXP Thermostat example is based on Project CHIP and NXP SDK,
-        and provides a prototype of a thermostat device which demonstrates device 
+        and provides a prototype of a thermostat device which demonstrates device
         commissioning and different cluster control.
       example_readme:
-      - examples/matter_examples/thermostat/README.md
+        - examples/matter_examples/thermostat/README.md
     extra_files:
-    - source: examples/matter_examples/thermostat/README.md
-      destination: README.md
-    - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/zap
-      destination: zap
-    - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/common
-      destination: common
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
-      destination: nxp_sdk_reconfig.cmake
-      board: [rdrw612bga, frdmrw612, evkbmimxrt1060, evkbmimxrt1170, evkcmimxrt1060]
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rw61x/app/ldscripts/RW610_flash.ld
-      destination: ldscripts/RW610_flash.ld
-      board: [rdrw612bga, frdmrw612]
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1170/app/ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
-      destination: ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
-      board: [evkbmimxrt1170]
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1060/app/ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
-      destination: ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
-      board: [evkbmimxrt1060, evkcmimxrt1060]
+      - source: examples/matter_examples/thermostat/README.md
+        destination: README.md
+      - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/zap
+        destination: zap
+      - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/common
+        destination: common
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
+        destination: nxp_sdk_reconfig.cmake
+        board:
+          [
+            rdrw612bga,
+            frdmrw612,
+            evkbmimxrt1060,
+            evkbmimxrt1170,
+            evkcmimxrt1060,
+          ]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rw61x/app/ldscripts/RW610_flash.ld
+        destination: ldscripts/RW610_flash.ld
+        board: [rdrw612bga, frdmrw612]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1170/app/ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
+        destination: ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld
+        board: [evkbmimxrt1170]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1060/app/ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
+        destination: ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
+        board: [evkbmimxrt1060, evkcmimxrt1060]
     replacements:
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../common REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap REALPATH)"
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
-          to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
-          to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
-      board: [rdrw612bga, frdmrw612, evkbmimxrt1170, evkbmimxrt1060, evkcmimxrt1060]
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ldscripts/RW610_flash.ld"
-      board: [rdrw612bga, frdmrw612]
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld"
-      board: [evkbmimxrt1170]
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
-      board: [evkbmimxrt1060, evkcmimxrt1060]
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../common REALPATH)"
+            to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap REALPATH)"
+            to: "get_filename_component(NXP_EXAMPLE_ZAP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap REALPATH)"
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
+            to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
+            to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
+        board:
+          [
+            rdrw612bga,
+            frdmrw612,
+            evkbmimxrt1170,
+            evkbmimxrt1060,
+            evkcmimxrt1060,
+          ]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/RW610_flash.ld"
+        board: [rdrw612bga, frdmrw612]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/MIMXRT1176xxxxx_cm7_flexspi_nor.ld"
+        board: [evkbmimxrt1170]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
+        board: [evkbmimxrt1060, evkcmimxrt1060]
     freestanding_copied_folders:
-    -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
+      - middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
-    - +armgcc@debug
-    - +armgcc@release
-    - -armgcc@flash_debug
-    - -armgcc@flash_release
-    - -armgcc@flexspi_nor_debug
-    - -armgcc@flexspi_nor_release
-    - -armgcc@sdram_debug
-    - -armgcc@sdram_release
-    - -iar@debug
-    - -iar@release
-    - -iar@flash_debug
-    - -iar@flash_release
-    - -iar@flexspi_nor_debug
-    - -iar@flexspi_nor_release
-    - -iar@sdram_debug
-    - -iar@sdram_release
-    - -mdk@debug
-    - -mdk@release
-    - -mdk@flash_debug
-    - -mdk@flash_release
-    - -mdk@flexspi_nor_debug
-    - -mdk@flexspi_nor_release
-    - -mdk@sdram_debug
-    - -mdk@sdram_release
+      - +armgcc@debug
+      - +armgcc@release
+      - -armgcc@flash_debug
+      - -armgcc@flash_release
+      - -armgcc@flexspi_nor_debug
+      - -armgcc@flexspi_nor_release
+      - -armgcc@sdram_debug
+      - -armgcc@sdram_release
+      - -iar@debug
+      - -iar@release
+      - -iar@flash_debug
+      - -iar@flash_release
+      - -iar@flexspi_nor_debug
+      - -iar@flexspi_nor_release
+      - -iar@sdram_debug
+      - -iar@sdram_release
+      - -mdk@debug
+      - -mdk@release
+      - -mdk@flash_debug
+      - -mdk@flash_release
+      - -mdk@flexspi_nor_debug
+      - -mdk@flexspi_nor_release
+      - -mdk@sdram_debug
+      - -mdk@sdram_release
   boards:
     evkbmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -111,9 +125,9 @@ thermostat@wifi_iw610:
     document:
       brief: Wi-Fi configuration with IW610 transceiver
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 thermostat@wifi_iw416:
@@ -122,8 +136,8 @@ thermostat@wifi_iw416:
     document:
       brief: Wi-Fi configuration with IW416 transceiver
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
   boards:
     evkbmimxrt1060: []
 
@@ -134,7 +148,7 @@ thermostat@wifi_factory_data:
     document:
       brief: Wi-Fi configuration with factory data provisioning
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -144,8 +158,8 @@ thermostat@wifi_iw612_fdata:
     document:
       brief: Wi-Fi configuration with IW612 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -155,9 +169,9 @@ thermostat@wifi_iw610_fdata:
     document:
       brief: Wi-Fi configuration with IW610 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 thermostat@wifi_iw416_fdata:
@@ -166,8 +180,8 @@ thermostat@wifi_iw416_fdata:
     document:
       brief: Wi-Fi configuration with IW416 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW416=y
   boards:
     evkbmimxrt1060: []
 
@@ -178,7 +192,7 @@ thermostat@wifi_ota:
     document:
       brief: Wi-Fi configuration with OTA update capability
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -188,8 +202,8 @@ thermostat@wifi_iw612_ota:
     document:
       brief: Wi-Fi configuration with IW612 transceiver and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -199,9 +213,9 @@ thermostat@wifi_iw610_ota:
     document:
       brief: Wi-Fi configuration with IW610 transceiver and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -212,7 +226,7 @@ thermostat@wifi_ota_factory_data:
     document:
       brief: Wi-Fi configuration with OTA updates and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -222,8 +236,8 @@ thermostat@wifi_iw612_ota_factory_data:
     document:
       brief: Wi-Fi configuration with IW612 transceiver, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -233,9 +247,9 @@ thermostat@wifi_iw610_ota_factory_data:
     document:
       brief: Wi-Fi configuration with IW610 transceiver, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -246,7 +260,7 @@ thermostat@thread_ftd:
     document:
       brief: Thread Full Thread Device (FTD) configuration
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -256,8 +270,8 @@ thermostat@thread_ftd_iw612:
     document:
       brief: Thread FTD configuration with IW612 transceiver
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -267,9 +281,9 @@ thermostat@thread_ftd_iw610:
     document:
       brief: Thread FTD configuration with IW610 transceiver
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 thermostat@thread_ftd_k32w0:
@@ -278,8 +292,8 @@ thermostat@thread_ftd_k32w0:
     document:
       brief: Thread FTD configuration with K32W061 transceiver
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
   boards:
     evkbmimxrt1060: []
 
@@ -290,7 +304,7 @@ thermostat@thread_ftd_factory_data:
     document:
       brief: Thread FTD configuration with factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -300,8 +314,8 @@ thermostat@thread_ftd_iw612_factory_data:
     document:
       brief: Thread FTD configuration with IW612 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -311,9 +325,9 @@ thermostat@thread_ftd_iw610_factory_data:
     document:
       brief: Thread FTD configuration with IW610 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 thermostat@thread_ftd_k32w0_factory_data:
@@ -322,8 +336,8 @@ thermostat@thread_ftd_k32w0_factory_data:
     document:
       brief: Thread FTD configuration with K32W061 transceiver and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.K32W061_transceiver=y
   boards:
     evkbmimxrt1060: []
 
@@ -334,7 +348,7 @@ thermostat@thread_ftd_ota:
     document:
       brief: Thread FTD configuration with OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -344,8 +358,8 @@ thermostat@thread_ftd_iw612_ota:
     document:
       brief: Thread FTD configuration with IW612 transceiver and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -355,9 +369,9 @@ thermostat@thread_ftd_iw610_ota:
     document:
       brief: Thread FTD configuration with IW610 transceiver and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -368,7 +382,7 @@ thermostat@thread_ftd_ota_factory_data:
     document:
       brief: Thread FTD configuration with OTA updates and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -378,8 +392,8 @@ thermostat@thread_ftd_iw612_ota_factory_data:
     document:
       brief: Thread FTD configuration with IW612 transceiver, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -389,9 +403,9 @@ thermostat@thread_ftd_iw610_ota_factory_data:
     document:
       brief: Thread FTD configuration with IW610 transceiver, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -402,7 +416,7 @@ thermostat@thread_ftd_wifi_border_router_ota:
     document:
       brief: Thread FTD configuration with Wi-Fi border router and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -412,8 +426,8 @@ thermostat@thread_ftd_wifi_border_router_iw612_ota:
     document:
       brief: Thread FTD configuration with IW612 transceiver, Wi-Fi border router, and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -423,9 +437,9 @@ thermostat@thread_ftd_wifi_border_router_iw610_ota:
     document:
       brief: Thread FTD configuration with IW610 transceiver, Wi-Fi border router, and OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -436,7 +450,7 @@ thermostat@thread_ftd_wifi_border_router_ota_factory_data:
     document:
       brief: Thread FTD configuration with Wi-Fi border router, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
   boards:
     frdmrw612: []
     rdrw612bga: []
@@ -446,8 +460,8 @@ thermostat@thread_ftd_wifi_border_router_iw612_ota_factory_data:
     document:
       brief: Thread FTD configuration with IW612 transceiver, Wi-Fi border router, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
   boards:
     evkcmimxrt1060: []
     evkbmimxrt1170@cm7: []
@@ -457,9 +471,9 @@ thermostat@thread_ftd_wifi_border_router_iw610_ota_factory_data:
     document:
       brief: Thread FTD configuration with IW610 transceiver, Wi-Fi border router, OTA updates, and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
-      - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
   boards:
     evkcmimxrt1060: []
 
@@ -470,7 +484,7 @@ thermostat@ethernet:
     document:
       brief: Ethernet configuration for wired network connectivity
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth.conf
   boards:
     frdmrw612: []
 
@@ -481,7 +495,7 @@ thermostat@ethernet_factory_data:
     document:
       brief: Ethernet configuration with factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_fdata.conf
   boards:
     frdmrw612: []
 
@@ -492,7 +506,7 @@ thermostat@ethernet_ota:
     document:
       brief: Ethernet configuration with OTA updates
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_ota.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_ota.conf
   boards:
     frdmrw612: []
 
@@ -503,7 +517,7 @@ thermostat@ethernet_ota_factory_data:
     document:
       brief: Ethernet configuration with OTA updates and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_ota_fdata.conf
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_eth_ota_fdata.conf
   boards:
     frdmrw612: []
 
@@ -514,22 +528,31 @@ thermostat@se05x_wifi_default_crypto:
     document:
       brief: Wi-Fi configuration with SE05X secure element
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
-      - -DCONFIG_CHIP_SE05X=y
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_CHIP_SE05X=y
   boards:
     frdmrw612: []
-
-# --- SE05X with Wi-Fi All Crypto Configuration ---
-thermostat@se05x_wifi_all_crypto:
+thermostat@se05x_wifi_iw610_default_crypto:
   section-type: custom_application
   contents:
     document:
+      brief: Wi-Fi configuration with IW610 transceiver and SE05X secure element
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
         - -DCONFIG_CHIP_SE05X=y
-        - -DCONFIG_CHIP_SE05X_RND_GEN=y
-        - -DCONFIG_CHIP_SE05X_HKDF_SHA256=y
-        - -DCONFIG_CHIP_SE05X_HMAC_SHA256=y
-        - -DCONFIG_CHIP_SE05X_DEVICE_ATTESTATION=y
   boards:
-    frdmrw612: []
+    evkcmimxrt1060: []
+thermostat@se05x_thread_ftd_wifi_border_router_iw610_ota_default_crypto:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread FTD configuration with IW610 transceiver, Wi-Fi border router, OTA updates and SE05X secure element
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_wifi_br_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
+    evkcmimxrt1060: []
