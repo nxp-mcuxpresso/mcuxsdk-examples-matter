@@ -9,9 +9,8 @@ which alows it to know the distance to another BLE CS device.
 
 To build the NXP Light Switch BLE CS example follow the steps:
 - Setup the environment
-- Download and patch the bluetooth cs restricted access sdk zip
 - Build the MCXW72 NXP Light Switch BLE CS example
-- Build the loc_user device BLE CS example
+- Build the loc_user_device BLE CS example
 - Matter BLE CS example
 
 ## Environment Setup
@@ -19,41 +18,28 @@ To build the NXP Light Switch BLE CS example follow the steps:
 All the information required to set up the environment, build the application,
 and test, are available in the [Matter Documentation for NXP MCU platforms](https://docs.mcuxpresso.nxp.com/matter/latest/html/index.html)
 
-
-## Download and patch BLE CS restricted access SDK zip
-
-- Go to [MCUXpresso SDK Builder](https://mcuxpresso.nxp.com).
-- Click `Select Development Board`, type `MCX-W72-EVK` in the input bar and select the board
-- The selection will appear below, select the 25.09.00 SDK version with Tag v25.09.00 and click `BUILD SDK`. [Select board](./main/images/board-select.png)
-- In the new page select `MCUXpresso IDE` in the `Toolchain/IDE` tab, desired `Host OS` and select all SDK packages. Scroll down and click `BUILD SDK`. Please ask your NXP representative in case of issue to access/select the `Wireless Localization` component. [Build SDK](./main/images/sdk-builder.png)
-- Download the zip once ready.
-- Unzip and open file `middleware/wireless/bluetooth/application/common/lcl/app_localization_algo.c`. Comment lines 41-51, 68-81, 86-100.
-- Copy the `bluetooth` folder from the SDK ZIP into the sdk-next path `mcuxsdk/middleware/wireless/bluetooth_cs`.
-- Use [app_lce_init.diff](./patches/app_lce_init.diff) to patch examples/_common/project_segments/wireless/wireless_mcu/app_common/app_lce_init.c
-
 ## Build the MCXW72 NXP Light Switch BLE CS example
 
 - Activate the matter environment
-- The example is located into `examples/light-switch-app-ble-cs`
+- The example is located into `examples/matter_examples/light-switch-app-ble-cs`
 - Use `west list` to see the building variants. `mcxw72evk` or `frdmmcxw72` are the available boards.
-- Build the app: eg `west build -d build_matter -b mcxw72evk examples/matter_examples/light-switch-app-ble-cs/mcux -DCONF_FILE=<absolute_path_to>/prj_thread_ftd.conf -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n -Dcore_id=cm33_core0 -DCONFIG_CHIP_LIB_SHELL=n`.
+- Build the app. E.g. `west build -d build_matter -b frdmmcxw72 examples/matter_examples/light-switch-app-ble-cs/mcux -DCONF_FILE_NAME=prj_thread_ftd.conf -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n -Dcore_id=cm33_core0 -DCONFIG_CHIP_LIB_SHELL=n`.
 - `-DCONFIG_CHIP_LIB_SHELL=n` is added to redirect the matter logs to the usb serial, this is easier for distance measurement visualisation. If this config is removed, matter cli is available on the usb serial and a USB-UART bridge is needed to see the logs, see `UART Ports` from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md)
 - The application binary will be located into `./build_matter/app.bin`.
-- Use the NBU binary from the SDK zip or sdk-next: `middleware/wireless/ieee-802.15.4/bin/mcxw72/mcxw72_nbu_ble_full_15_4_dyn.bin`
+- Use the NBU binary from the sdk: `middleware/wireless/ieee-802.15.4/bin/mcxw72/mcxw72_nbu_ble_full_15_4_dyn.bin`
 - Use the instructions from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md) for flashing on the MCXW72 board.
 
-## Build the loc_user device BLE CS example
+## Build the loc_user_device BLE CS example
 
-- Download [MCUXpresso-IDE](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE).
-- Open MCUXpresso-IDE, close Welcome tab.
-- Drag and drop the SDK zip intro the `Installed SDKs` window. [Install SDK](./main/images/install-sdk.png)
-- In `Project Explorer` on the right select `Import SDK example(s)...`, click on mcxw72evk board, click Next.
-- Select loc_user_device_bm project in the SDK Import Wizard window and click Finish. [Import project](./main/images/select-project.png)
-- In the Project Explorer go to `source/app_preinclude.h` and set `gAppUsePrivacy_d` to 0 and save. [Disable privacy](./main/images/disable-privacy.png)
-- In the Project Explorer right-click on project and select `Build Project`. [Build project](./main/images/build-project.png)
-- After the project is built, go into Debug, right click on `mcxw72evk_loc_user_device_bm.axf`, go to Binary Utilities > Create binary to convert built file to binary format. [Convert to binary](./main/images/create-binary.png)
-- Use this application binary: `Debug/mcxw72evk_loc_user_device_bm.bin`.
-- Use the NBU binary from the SDK zip or sdk-next: `middleware/wireless/ble_controller/bin/mcxw72_nbu_ble_all_hosted.bin`.
+- Open and edit the appropriate app_preinclude.h file for the loc_user_device_bm example (`middleware/wireless/bluetooth/boards/mcxw72evk/bluetooth/loc_user_device/app_preinclude.h`)
+- Set `gAppUsePrivacy_d` to `0`
+- Set `gAppIsPeripheral_d` to `0U`
+- Set `gCsDefaultRole_c` to `gCsRoleInitiator_c`
+- The example is located into `examples/wireless_examples/bluetooth/loc_user_device/bm`
+- Use `west list` to see the building variants. `mcxw72evk` or `frdmmcxw72` are the available boards.
+- Build the app. E.g. `west build -d loc_user_device -b mcxw72evk examples/wireless_examples/bluetooth/loc_user_device/bm -Dcore_id=cm33_core0`.
+- The application binary will be located into `./loc_user_device/loc_user_device_bm_cm33_core0.elf`.
+- Use the NBU binary from the sdk: `middleware/wireless/ble_controller/bin/mcxw72_nbu_ble_hosted.bin`.
 - Use the instructions from [README.md](../../../middleware/matter/docs/platforms/nxp/nxp_mcxw72_guide.md) for flashing on the MCXW72 board.
 
 ## Matter BLE CS example
