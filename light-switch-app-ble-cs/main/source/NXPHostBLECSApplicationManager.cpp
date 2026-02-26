@@ -1,7 +1,7 @@
 /*
  *
  *    Copyright (c) 2024 Project CHIP Authors
- *    Copyright 2024-2025 NXP
+ *    Copyright 2024-2026 NXP
  *    All rights reserved.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,15 +25,17 @@
 #include <platform/nxp/common/ble/BLEManagerCommon.h>
 
 extern "C" {
+#include "app_conn.h"
 #include "app_localization.h"
 }
-
 #include "app_localization_algo.h"
 #include "ble_sig_defines.h"
 #include "gap_types.h"
 #include "gatt_db_app_interface.h"
 #include "gatt_db_handles.h"
 #include "EmbeddedTypes.h"
+#include "fsl_component_mem_manager.h"
+#include "fwk_messaging.h"
 
 extern "C"
 {
@@ -50,6 +52,10 @@ static void BleApp_CsEventHandler(deviceId_t deviceId, void *pData, appCsEventTy
 static void BleApp_PrintMeasurementResults(deviceId_t deviceId, localizationAlgoResult_t *pResult);
 
 gapAdStructure_t* ble_cs_adv_data_cb(uint8_t *size);
+
+static appCallbackHandler_t pfCsCmdCompleteCallback                   = NULL;
+static appCallbackHandler_t pfCsCmdStatusCallback                     = NULL;
+static appCallbackHandler_t pfCsMetaEventCallback                     = NULL;
 
 using namespace ::chip::DeviceLayer;
 using namespace ::chip::DeviceLayer::Internal;
@@ -83,7 +89,11 @@ void BLEApplicationManager::Init(void)
 void BLEApplicationManager::EnableMultipleConnectionsHandler(void)
 {
     /* Publish an event to the Matter task to always set the commissioning state in the Matter task context */
-    PlatformMgr().ScheduleWork(EnableMultipleConnections, 0);
+    CHIP_ERROR err = PlatformMgr().ScheduleWork(EnableMultipleConnections, 0);
+    if (err != CHIP_NO_ERROR)
+    {
+        ChipLogError(DeviceLayer, "Failed to schedule EnableMultipleConnections: %s", err.AsString());
+    }
 }
 
 void BLEApplicationManager::EnableMultipleConnections(intptr_t arg)
@@ -127,11 +137,85 @@ void BLEApplicationManager::FactoryReset(void)
 #endif
 }
 
-extern "C" bleResult_t App_PostCallbackMessage(void (*handler)(void*), void* param)
+extern "C" void App_RegisterCsCallbacks(
+    appCallbackHandler_t  csCmdCompleteCallback,
+    appCallbackHandler_t  csCmdStatusCallback,
+    appCallbackHandler_t  csMetaEventCallback
+)
 {
-    BLEManagerCommon::AddBleAppMsgHandler(BLEManagerCommon::BLE_MSG_APP_EV_CB, handler, param);
+    pfCsCmdCompleteCallback = csCmdCompleteCallback;
+    pfCsCmdStatusCallback = csCmdStatusCallback;
+    pfCsMetaEventCallback = csMetaEventCallback;
+}
 
-    return gBleSuccess_c;
+extern "C" bleResult_t App_PostHostCallbackMessage(appMsgFromHost_t *pMsgIn)
+{
+    if (pMsgIn == NULL)
+    {
+        return gBleInvalidParameter_c;
+    }
+
+    CHIP_ERROR err = CHIP_NO_ERROR;
+
+    switch ( pMsgIn->msgType )
+    {
+        case (uint32_t)gAppCsCmdCompleteEventMsg_c:
+        {
+            if (pfCsCmdCompleteCallback != NULL)
+            {
+                err = BLEManagerCommon::AddBleAppMsgHandler(BLEManagerCommon::BLE_MSG_APP_EV_CB,
+                                            pfCsCmdCompleteCallback, pMsgIn->msgData.pCsEventData);
+            }
+            break;
+        }
+        case (uint32_t)gAppCsCmdStatusEventMsg_c:
+        {
+            if (pfCsCmdStatusCallback != NULL)
+            {
+                err = BLEManagerCommon::AddBleAppMsgHandler(BLEManagerCommon::BLE_MSG_APP_EV_CB,
+                                            pfCsCmdStatusCallback, pMsgIn->msgData.pCsEventData);
+            }
+            break;
+        }
+        case (uint32_t)gAppCsMetaEventMsg_c:
+        {
+            if (pfCsMetaEventCallback != NULL)
+            {
+                err = BLEManagerCommon::AddBleAppMsgHandler(BLEManagerCommon::BLE_MSG_APP_EV_CB,
+                                            pfCsMetaEventCallback, pMsgIn->msgData.pCsEventData);
+            }
+            break;
+        }
+        default:
+        {
+            ChipLogError(DeviceLayer, "Unknown CS message type: %lu", pMsgIn->msgType);
+        }
+    }
+
+    if (err != CHIP_NO_ERROR)
+    {
+        /* Free pMsgIn internal buffers */
+        csMetaEventData_t *pCsMetaEvent = static_cast<csMetaEventData_t *>(pMsgIn->msgData.pCsEventData);
+        if (pCsMetaEvent->pEventData != NULL)
+        {
+            MEM_BufferFree(pCsMetaEvent->pEventData);
+        }
+        if (pCsMetaEvent != NULL)
+        {
+            MEM_BufferFree(pCsMetaEvent);
+        }
+    }
+
+    /*
+     * Free pMsgIn on both cases.
+     * AddBleAppMsgHandler success: it will allocate another message inside BLEmanager
+     *                              and will take pMsgIn->msgData.pCsEventData pointer
+     *                              as message parameter.
+     * AddBleAppMsgHandler fails:   message should be freed when failing.
+     */
+    MSG_Free(pMsgIn);
+
+    return (err == CHIP_NO_ERROR) ? gBleSuccess_c : gBleOutOfMemory_c;
 }
 
 gapAdStructure_t* ble_cs_adv_data_cb(uint8_t *size)
@@ -537,6 +621,7 @@ static void BleApp_PrintMeasurementResults(deviceId_t deviceId, localizationAlgo
 
     if (mProcedureCount == mRangeSettings[deviceId].maxNumProcedures)
     {
+
 #if defined(gAppUseRADEAlgorithm_d) && (gAppUseRADEAlgorithm_d == 1)
         if ((pResult->algorithm & eMciqAlgoEmbedRADE) != 0U)
         {

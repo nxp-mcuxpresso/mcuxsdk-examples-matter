@@ -34,12 +34,14 @@ using namespace chip::Shell;
 using namespace chip;
 using namespace chip::NXP::App;
 
+#ifdef ENABLE_CHIP_SHELL
 static CHIP_ERROR cliBleCsAdv(int argc, char * argv[])
 {
     chip::NXP::App::BleAppMgr().EnableMultipleConnectionsHandler();
 
     return CHIP_NO_ERROR;
 }
+#endif /* ENABLE_CHIP_SHELL */
 
 void LightSwitchAppBleCs::AppTaskCs::AppMatter_RegisterCustomCliCommands()
 {
@@ -55,8 +57,9 @@ void LightSwitchAppBleCs::AppTaskCs::AppMatter_RegisterCustomCliCommands()
     LightSwitchApp::AppTask::AppMatter_RegisterCustomCliCommands();
 
     Engine::Root().RegisterCommands(kCommands, sizeof(kCommands) / sizeof(kCommands[0]));
-#endif
+#endif /* ENABLE_CHIP_SHELL */
 }
+
 
 LightSwitchAppBleCs::AppTaskCs & LightSwitchAppBleCs::AppTaskCs::GetDefaultInstance()
 {
