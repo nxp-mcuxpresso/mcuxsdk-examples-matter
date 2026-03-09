@@ -62,4 +62,5 @@ and test, are available in the [Matter Documentation for NXP MCU platforms](http
 | `thread_ftd_ota_factory_data` | Thread FTD configuration with OTA updates and factory data | frdmrw612, rdrw612bga | `prj_thread_ftd_ota_fdata.conf` | None |
 | `thread_ftd_iw612_ota_factory_data` | Thread FTD configuration with IW612 transceiver, OTA updates, and factory data | evkcmimxrt1060, evkbmimxrt1170@cm7 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y` |
 | `thread_ftd_iw610_ota_factory_data` | Thread FTD configuration with IW610 transceiver, OTA updates, and factory data | evkcmimxrt1060 | `prj_thread_ftd_ota_fdata.conf` | `-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y`<br>`-DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y` |
-| `se05x_wifi_default_crypto` | Wi-Fi configuration with SE05X secure element | frdmrw612 | `prj_wifi.conf` | `-DCONFIG_CHIP_SE05X=y` |
+| `se05x_wifi_default_crypto` | Wi-Fi configuration with SE05X secure element (Node Oper key in SE05X) | frdmrw612 | `prj_wifi.conf` | `-DCONFIG_CHIP_SE05X=y` |
+| `se05x_wifi_default_crypto_factory_data` | Wi-Fi configuration with SE05X secure element (Node Oper key and DA key in SE05X) | frdmrw612 | `prj_wifi_fdata.conf` | `-DCONFIG_CHIP_SE05X=y` |

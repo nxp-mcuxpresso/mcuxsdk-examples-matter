@@ -437,9 +437,21 @@ all_clusters_app@se05x_wifi_default_crypto:
   section-type: custom_application
   contents:
     document:
-      brief: Wi-Fi configuration with SE05X secure element
+      brief: Wi-Fi configuration with SE05X secure element (Node Oper key in SE05X)
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmrw612: []
+
+# --- SE05X with Wi-Fi Default Crypto and Factory Data Configuration ---
+all_clusters_app@se05x_wifi_default_crypto_factory_data:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Wi-Fi configuration with SE05X secure element (Node Oper key and DA key in SE05X)
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi_fdata.conf
         - -DCONFIG_CHIP_SE05X=y
   boards:
     frdmrw612: []
