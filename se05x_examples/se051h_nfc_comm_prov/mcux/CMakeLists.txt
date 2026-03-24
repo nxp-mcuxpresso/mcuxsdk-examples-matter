@@ -1,0 +1,94 @@
+#
+# Copyright 2025-2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# ****************************************************************
+# NFC Commisioning with SE05X
+# ****************************************************************
+
+cmake_minimum_required(VERSION 3.30)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Retrieve CHIP_ROOT if provided
+if (DEFINED CHIP_ROOT)
+    get_filename_component(CHIP_ROOT ${CHIP_ROOT} ABSOLUTE)
+else()
+    get_filename_component(CHIP_ROOT ${SdkRootDirPath}/middleware/matter REALPATH)
+endif()
+
+# Export CHIP_ROOT as an environment variable to be recognized by Kconfig
+set(COMMON_KCONFIG_ENV_SETTINGS CHIP_ROOT=${CHIP_ROOT})
+
+get_filename_component(EXAMPLE_PLATFORM_NXP_COMMON_DIR ${CHIP_ROOT}/examples/platform/nxp/common REALPATH)
+get_filename_component(NXP_MATTER_SUPPORT_DIR ${CHIP_ROOT}/third_party/nxp/nxp_matter_support REALPATH)
+
+# Add secure element lib as an external module
+list(APPEND EXTRA_MCUX_MODULES ${CHIP_ROOT}/third_party/simw-top-mini/repo/matter)
+
+# If CONF_FILE_NAME is provided, append its full path to CONF_FILE
+if (DEFINED CONF_FILE_NAME)
+    set(CONF_FILE ${CONF_FILE} ${CHIP_ROOT}/examples/platform/nxp/config/${CONF_FILE_NAME})
+endif()
+
+# Add application prj.conf & Kconfig
+set(CONF_FILE ${CONF_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/prj.conf)
+
+set(KCONFIG_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/Kconfig)
+
+# Load the MCUX SDK package
+find_package(McuxSDK 3.0.0)
+
+# Get compiler flags and includes and pass them to CHIP target
+list(APPEND CONFIG_CHIP_EXTERNAL_TARGETS McuxSDK)
+
+if (NOT DEFINED NXP_SDK_RECONFIG_CMAKE_DIR)
+    if (CONFIG_CHIP_NXP_PLATFORM_MCXW72)
+        get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/mcxw72 REALPATH)
+    else()
+        get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/rt REALPATH)
+    endif()
+endif()
+
+# Include the nxp_sdk_reconfig.cmake to customize the SDK for Matter application
+include(${NXP_SDK_RECONFIG_CMAKE_DIR}/nxp_sdk_reconfig.cmake)
+
+# Define application project name
+project(se051h_nfc_comm_prov)
+
+target_include_directories(app
+    PRIVATE
+    ${CHIP_ROOT}/third_party/simw-top-mini/repo/demos/se051h_nfc_comm_prov/common
+)
+
+target_sources(app
+    PRIVATE
+    ${CHIP_ROOT}/third_party/simw-top-mini/repo/demos/se051h_nfc_comm_prov/mcu/main.cpp
+    ${CHIP_ROOT}/third_party/simw-top-mini/repo/demos/se051h_nfc_comm_prov/common/se051h_nfc_comm_prov.cpp
+    ${CHIP_ROOT}/examples/platform/nxp/common/app/support/Memconfig.cpp
+)
+if (CONFIG_MCUX_HW_DEVICE_MCXW727C)
+    target_compile_definitions(simw_lib
+        PUBLIC
+        MBEDTLS_NXP_SSSAPI=1
+        RL_ALLOW_CUSTOM_SHMEM_CONFIG=1
+    )
+endif()
+
+if (CONFIG_MCUX_HW_DEVICE_MCXW727C)
+        mcux_add_macro(
+        MBEDTLS_USER_CONFIG_FILE=\\\"${CHIP_ROOT}/third_party/simw-top-mini/repo/matter/se05x_demos_common/w72_se05x_provision_mbedtls_user_config.h\\\"
+    )
+else()
+    mcux_add_macro(
+        MBEDTLS_USER_CONFIG_FILE=\\\"${CHIP_ROOT}/third_party/simw-top-mini/repo/matter/se05x_demos_common/se05x_provision_mbedtls_user_config.h\\\"
+    )
+endif()
+
+# Use MCUX post-build function to convert the executable to binary format
+mcux_convert_binary(
+    BINARY ${APPLICATION_BINARY_DIR}/app.bin
+    TARGET app
+    TOOLCHAINS ${CONFIG_TOOLCHAIN}
+    EXTRA_ARGS "${CONFIG_REMOVE_SECTIONS_FROM_BIN}"
+)

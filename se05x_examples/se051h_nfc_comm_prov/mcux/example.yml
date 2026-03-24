@@ -1,0 +1,174 @@
+# yaml-language-server: $schema=../../../../scripts/data_schema/example_description_schema.json
+#
+# Copyright 2026 NXP
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+# This file describes the SE05X nfc commissioning provisioning example application for the NXP MCUXpresso SDK.
+
+se051h_nfc_comm_prov:
+  section-type: application
+  contents:
+    project-root-path: middleware/matter/third_party/simw-top-mini/repo/demos/se051h_nfc_comm_prov/mcu
+    meta_path: middleware/matter/third_party/simw-top-mini/repo/demos/se051h_nfc_comm_prov/mcu
+    document:
+      name: se051h_nfc_comm_prov
+      category: SE05x Examples
+      brief: The se051h_nfc_comm_prov example is based on NXP SDK
+        and provisioning the nfc commissioning data to the SE05X.
+      example_readme:
+      - examples/matter_examples/se05x_examples/se051h_nfc_comm_prov/readme.md
+    extra_files:
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/nxp_sdk_reconfig.cmake
+        destination: nxp_sdk_reconfig.cmake
+        board: [frdmrw612, evkcmimxrt1060]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rw61x/app/ldscripts/RW610_flash.ld
+        destination: ldscripts/RW610_flash.ld
+        board: [frdmrw612]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/rt/rt1060/app/ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
+        destination: ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld
+        board: [evkcmimxrt1060]
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw72/nxp_sdk_reconfig.cmake
+        destination: nxp_sdk_reconfig.cmake
+        board: [frdmmcxw72]
+      - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
+        destination: ldscripts/connectivity.ld
+        board: [frdmmcxw72]
+    replacements:
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
+            to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
+            to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
+        board: [frdmrw612, evkcmimxrt1060, frdmmcxw72]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/RW610_flash.ld"
+        board: [frdmrw612]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/MIMXRT1062xxxxx_flexspi_nor.ld"
+        board: [evkcmimxrt1060]
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/connectivity.ld"
+        board: [frdmmcxw72]
+    toolchains:
+      - +armgcc@debug
+      - +armgcc@release
+      - -armgcc@flash_debug
+      - -armgcc@flash_release
+      - -armgcc@flexspi_nor_debug
+      - -armgcc@flexspi_nor_release
+      - -armgcc@sdram_debug
+      - -armgcc@sdram_release
+      - -iar@debug
+      - -iar@release
+      - -iar@flash_debug
+      - -iar@flash_release
+      - -iar@flexspi_nor_debug
+      - -iar@flexspi_nor_release
+      - -iar@sdram_debug
+      - -iar@sdram_release
+      - -mdk@debug
+      - -mdk@release
+      - -mdk@flash_debug
+      - -mdk@flash_release
+      - -mdk@flexspi_nor_debug
+      - -mdk@flexspi_nor_release
+      - -mdk@sdram_debug
+      - -mdk@sdram_release
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@scp03:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with platform scp03 authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_SCP03=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@user_id:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with user Key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_USER_ID=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@aes_key:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with aes Key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_AES_KEY=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@ec_key:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with ec Key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_EC_KEY=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@scp03_user_id:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with SCP03 + user Key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_SCP03_USER_ID=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@scp03_aes_key:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with SCP03 + aes key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_SCP03_AES_KEY=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []
+
+se051h_nfc_comm_prov@scp03_ec_key:
+  section-type: custom_application
+  contents:
+    document:
+      brief: NFC commissioning provisioning example with SCP03 + ec key authenticated session
+      extra_build_args:
+        - -DCONFIG_SE05X_SCP03_EC_KEY=y
+  boards:
+    evkcmimxrt1060: []
+    frdmrw612: []
+    frdmmcxw72@cm33_core0: []

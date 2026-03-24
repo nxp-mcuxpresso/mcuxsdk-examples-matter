@@ -1,0 +1,7 @@
+#
+# Copyright 2025-2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
+mainmenu "SE05X Device attestation provisioning example"
+
+rsource "$(CHIP_ROOT)/third_party/simw-top-mini/repo/matter/se05x_demos_common/Kconfig.se05x.common"
