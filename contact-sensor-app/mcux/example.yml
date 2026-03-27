@@ -14,81 +14,82 @@ contact_sensor_app:
     document:
       name: contact-sensor-app
       category: matter_examples
-      brief: The NXP contact-sensor-app example is based on Project CHIP and NXP SDK,
-        and provides a prototype of a contact-sensor device which demonstrates device 
+      brief:
+        The NXP contact-sensor-app example is based on Project CHIP and NXP SDK,
+        and provides a prototype of a contact-sensor device which demonstrates device
         commissioning and different cluster control.
       example_readme:
-      - examples/matter_examples/contact-sensor-app/README.md
+        - examples/matter_examples/contact-sensor-app/README.md
       extra_build_args:
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
     extra_files:
-    - source: examples/matter_examples/contact-sensor-app/README.md
-      destination: README.md
-    - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/zap-lit
-      destination: zap-lit
-    - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/zap-sit
-      destination: zap-sit
-    - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/common
-      destination: common
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
-      destination: nxp_sdk_reconfig.cmake
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
-    - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
-      destination: ldscripts/connectivity.ld
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      - source: examples/matter_examples/contact-sensor-app/README.md
+        destination: README.md
+      - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/zap-lit
+        destination: zap-lit
+      - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/zap-sit
+        destination: zap-sit
+      - source: ${SdkRootDirPath}/middleware/matter/examples/contact-sensor-app/nxp/common
+        destination: common
+      - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
+        destination: nxp_sdk_reconfig.cmake
+        board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
+        destination: ldscripts/connectivity.ld
+        board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
     replacements:
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../common REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-lit REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-lit REALPATH)"
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-sit REALPATH)"
-          to: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-sit REALPATH)"
-    - file: CMakeLists.txt
-      replace:
-        - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
-          to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
-          to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
-    - file: nxp_sdk_reconfig.cmake
-      replace:
-        - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
-          to: "LINKER ldscripts/connectivity.ld"
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../common REALPATH)"
+            to: "get_filename_component(NXP_EXAMPLE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common REALPATH)"
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-lit REALPATH)"
+            to: "get_filename_component(NXP_EXAMPLE_ZAP_LIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-lit REALPATH)"
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../zap-sit REALPATH)"
+            to: "get_filename_component(NXP_EXAMPLE_ZAP_SIT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/zap-sit REALPATH)"
+      - file: CMakeLists.txt
+        replace:
+          - from: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${NXP_MATTER_SUPPORT_DIR}/examples/platform/${CONFIG_CHIP_NXP_PLATFORM_FAMILY} REALPATH)"
+            to: "get_filename_component(NXP_SDK_RECONFIG_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)"
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "BASE_PATH ${MATTER_DEFAULT_LINKER_FILE_PATH}"
+            to: "BASE_PATH ${CMAKE_CURRENT_SOURCE_DIR}"
+      - file: nxp_sdk_reconfig.cmake
+        replace:
+          - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
+            to: "LINKER ldscripts/connectivity.ld"
+        board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
     freestanding_copied_folders:
-    -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
+      - middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
-    - +armgcc@debug
-    - +armgcc@release
-    - -armgcc@flash_debug
-    - -armgcc@flash_release
-    - -armgcc@flexspi_nor_debug
-    - -armgcc@flexspi_nor_release
-    - -armgcc@sdram_debug
-    - -armgcc@sdram_release
-    - -iar@debug
-    - -iar@release
-    - -iar@flash_debug
-    - -iar@flash_release
-    - -iar@flexspi_nor_debug
-    - -iar@flexspi_nor_release
-    - -iar@sdram_debug
-    - -iar@sdram_release
-    - -mdk@debug
-    - -mdk@release
-    - -mdk@flash_debug
-    - -mdk@flash_release
-    - -mdk@flexspi_nor_debug
-    - -mdk@flexspi_nor_release
-    - -mdk@sdram_debug
-    - -mdk@sdram_release
+      - +armgcc@debug
+      - +armgcc@release
+      - -armgcc@flash_debug
+      - -armgcc@flash_release
+      - -armgcc@flexspi_nor_debug
+      - -armgcc@flexspi_nor_release
+      - -armgcc@sdram_debug
+      - -armgcc@sdram_release
+      - -iar@debug
+      - -iar@release
+      - -iar@flash_debug
+      - -iar@flash_release
+      - -iar@flexspi_nor_debug
+      - -iar@flexspi_nor_release
+      - -iar@sdram_debug
+      - -iar@sdram_release
+      - -mdk@debug
+      - -mdk@release
+      - -mdk@flash_debug
+      - -mdk@flash_release
+      - -mdk@flexspi_nor_debug
+      - -mdk@flexspi_nor_release
+      - -mdk@sdram_debug
+      - -mdk@sdram_release
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -101,8 +102,8 @@ contact_sensor_app@thread_mtd:
     document:
       brief: Thread Minimal Thread Device (MTD) configuration
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -114,8 +115,8 @@ contact_sensor_app@thread_mtd_low_power:
     document:
       brief: Thread MTD configuration with low power optimization
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -127,8 +128,8 @@ contact_sensor_app@thread_mtd_low_power_lit:
     document:
       brief: Thread MTD and Matter ICD LIT configuration with low power optimization
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -141,8 +142,8 @@ contact_sensor_app@thread_mtd_factory_data:
     document:
       brief: Thread MTD configuration with factory data provisioning
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -155,8 +156,8 @@ contact_sensor_app@thread_mtd_ota:
     document:
       brief: Thread MTD configuration with OTA update capability
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -168,8 +169,8 @@ contact_sensor_app@thread_mtd_ota_low_power:
     document:
       brief: Thread MTD configuration with OTA updates and low power optimization
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_low_power.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_low_power.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -182,8 +183,8 @@ contact_sensor_app@thread_mtd_ota_factory_data:
     document:
       brief: Thread MTD configuration with OTA updates and factory data
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
@@ -195,9 +196,59 @@ contact_sensor_app@thread_mtd_ota_factory_data_low_power:
     document:
       brief: Thread MTD configuration with OTA updates, factory data, and low power optimization
       extra_build_args:
-      - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata_low_power.conf
-      - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata_low_power.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
     frdmmcxw71: []
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+# --- Thread MTD LIT Configuration with SE05x default crypto ---
+contact_sensor_app@thread_mtd_lit_lowpower_se05x_default_crypto:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD LIT Configuration with SE05x default crypto
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_SE05X_HOST_GPIO=y
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+# --- Thread MTD LIT Configuration with SE05x default crypto and OTA update ---
+contact_sensor_app@thread_mtd_lit_lowpower_se05x_default_crypto_ota:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD LIT Configuration with SE05x default crypto and OTA update
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_OTA_REQUESTOR=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+# --- Thread MTD LIT Configuration with SE05x default crypto, OTA update and Factory Data ---
+contact_sensor_app@thread_mtd_lit_lowpower_se05x_default_crypto_ota_factory_data:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD LIT Configuration with SE05x default crypto, OTA update and Factory Data
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_OTA_REQUESTOR=y
+        - -DCONFIG_CHIP_FACTORY_DATA=y
+        - -DCONFIG_CHIP_FACTORY_DATA_CERT_SOURCE_GENERATED=y
+        - -DCONFIG_CHIP_FACTORY_DATA_GENERATE_SPAKE2_VERIFIER=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+        - -DCONFIG_CHIP_SE05X=y
+  boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
