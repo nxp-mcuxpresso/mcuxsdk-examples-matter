@@ -101,73 +101,13 @@ se05x_dev_attest_key_prov@scp03:
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se05x_dev_attest_key_prov@user_id:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Device attestation provisioning example with user_id
-      extra_build_args:
-        - -DCONFIG_SE05X_USER_ID=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
 se05x_dev_attest_key_prov@aes_key:
   section-type: custom_application
   contents:
     document:
-      brief: Device attestation provisioning example with aes_key
+      brief: Device attestation provisioning example with aes_key session
       extra_build_args:
         - -DCONFIG_SE05X_AES_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_dev_attest_key_prov@ec_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Device attestation provisioning example with ec_key
-      extra_build_args:
-        - -DCONFIG_SE05X_EC_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_dev_attest_key_prov@scp03_user_id:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Device attestation provisioning example with scp03 + user_id
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_USER_ID=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_dev_attest_key_prov@scp03_aes_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Device attestation provisioning example with scp03 + aes key
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_AES_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_dev_attest_key_prov@scp03_ec_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Device attestation provisioning example with scp03 + ec_key
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_EC_KEY=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []

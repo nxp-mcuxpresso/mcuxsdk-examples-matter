@@ -27,7 +27,16 @@ user@ubuntu:~/sdk-next/mcuxsdk$ west build -d <out_dir> -b evkcmimxrt1060 exampl
 
 # Usage
 
-When using on supported MCUs, modify the main file defines (examples - sdk-next/mcuxsdk/middleware/matter/third_party/simw-top-mini/repo/demos/se05x_get_passcode/mcu/main.cpp)
+When using on supported MCUs, you can configure the passcode set number using Kconfig build options:
+`TP_SPAKE_PASSCODE_SET_NO` (Possible values = 1,2,3).
+
+Pass the configuration during build:
+
+```
+# For FRDMW72
+west build -d <out_dir> -b frdmmcxw72 examples/matter_examples/se05x_examples/se05x_get_passcode/mcux -Dcore_id=cm33_core0 -DCONFIG_SE05X_TP_SPAKE_PASSCODE_SET_NO=1
+```
+Note: If no pass-code set number is passed, default pass-code set number is 1.
 
 ## Supported Configurations
 
@@ -35,9 +44,4 @@ When using on supported MCUs, modify the main file defines (examples - sdk-next/
 |---------|-------------|------------------|----------------------------|------------|
 | `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | None |
 | `scp03` | Get passcode example with platform scp03 authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03=y` |
-| `user_id` | Get passcode example with user Key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_USER_ID=y` |
 | `aes_key` | Get passcode example with aes Key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_AES_KEY=y` |
-| `ec_key` | Get passcode example with ec Key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_EC_KEY=y` |
-| `scp03_user_id` | Get passcode example with SCP03 + user Key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_USER_ID=y` |
-| `scp03_aes_key` | Get passcode example with SCP03 + aes key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_AES_KEY=y` |
-| `scp03_ec_key` | Get passcode example with SCP03 + ec key authenticated session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_EC_KEY=y` |

@@ -101,18 +101,6 @@ se05x_get_passcode@scp03:
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se05x_get_passcode@user_id:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Get passcode example with user Key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_USER_ID=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
 se05x_get_passcode@aes_key:
   section-type: custom_application
   contents:
@@ -120,54 +108,6 @@ se05x_get_passcode@aes_key:
       brief: Get passcode example with aes Key authenticated session
       extra_build_args:
         - -DCONFIG_SE05X_AES_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_get_passcode@ec_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Get passcode example with ec Key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_EC_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_get_passcode@scp03_user_id:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Get passcode example with SCP03 + user Key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_USER_ID=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_get_passcode@scp03_aes_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Get passcode example with SCP03 + aes key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_AES_KEY=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
-se05x_get_passcode@scp03_ec_key:
-  section-type: custom_application
-  contents:
-    document:
-      brief: Get passcode example with SCP03 + ec key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_SCP03_EC_KEY=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []

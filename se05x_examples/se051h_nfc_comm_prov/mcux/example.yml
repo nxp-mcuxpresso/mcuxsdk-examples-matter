@@ -101,18 +101,6 @@ se051h_nfc_comm_prov@scp03:
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se051h_nfc_comm_prov@user_id:
-  section-type: custom_application
-  contents:
-    document:
-      brief: NFC commissioning provisioning example with user Key authenticated session
-      extra_build_args:
-        - -DCONFIG_SE05X_USER_ID=y
-  boards:
-    evkcmimxrt1060: []
-    frdmrw612: []
-    frdmmcxw72@cm33_core0: []
-
 se051h_nfc_comm_prov@aes_key:
   section-type: custom_application
   contents:
@@ -125,49 +113,50 @@ se051h_nfc_comm_prov@aes_key:
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se051h_nfc_comm_prov@ec_key:
+se051h_nfc_comm_prov@reset_with_aes_key_session:
   section-type: custom_application
   contents:
     document:
-      brief: NFC commissioning provisioning example with ec Key authenticated session
+      brief: Delete all provisioned data (QR code is not deleted) with aes Key authenticated session
       extra_build_args:
-        - -DCONFIG_SE05X_EC_KEY=y
+        - -DCONFIG_SE05X_AES_KEY=y
+        - -DCONFIG_SE05X_DO_RESET=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se051h_nfc_comm_prov@scp03_user_id:
+se051h_nfc_comm_prov@reset_plain:
   section-type: custom_application
   contents:
     document:
-      brief: NFC commissioning provisioning example with SCP03 + user Key authenticated session
+      brief: Delete all provisioned data (QR code is not deleted)
       extra_build_args:
-        - -DCONFIG_SE05X_SCP03_USER_ID=y
+        - -DCONFIG_SE05X_DO_RESET=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se051h_nfc_comm_prov@scp03_aes_key:
+se051h_nfc_comm_prov@plain_aes_key_provision:
   section-type: custom_application
   contents:
     document:
-      brief: NFC commissioning provisioning example with SCP03 + aes key authenticated session
+      brief: Provision AES key in to SE05x with plain session
       extra_build_args:
-        - -DCONFIG_SE05X_SCP03_AES_KEY=y
+        - -DCONFIG_SE05X_DO_AES_KEY_PROVISION=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []
     frdmmcxw72@cm33_core0: []
 
-se051h_nfc_comm_prov@scp03_ec_key:
+se051h_nfc_comm_prov@network_type_thread:
   section-type: custom_application
   contents:
     document:
-      brief: NFC commissioning provisioning example with SCP03 + ec key authenticated session
+      brief: Enable thread network interface for NFC commissioning
       extra_build_args:
-        - -DCONFIG_SE05X_SCP03_EC_KEY=y
+        - -DCONFIG_SE05X_DEVICE_NETWORK_TYPE_THREAD=y
   boards:
     evkcmimxrt1060: []
     frdmrw612: []

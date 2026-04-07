@@ -40,9 +40,4 @@ user@ubuntu:~/sdk-next/mcuxsdk$ west build -d <out_dir> -b evkcmimxrt1060 exampl
 |---------|-------------|------------------|----------------------------|------------|
 | `default` | Uses default platform settings. For more details, refer to the platform-specific guide. | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | None |
 | `scp03` | Device attestation provisioning example with scp03 | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03=y` |
-| `user_id` | Device attestation provisioning example with user_id | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_USER_ID=y` |
-| `aes_key` | Device attestation provisioning example with aes_key | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_AES_KEY=y` |
-| `ec_key` | Device attestation provisioning example with ec_key | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_EC_KEY=y` |
-| `scp03_user_id` | Device attestation provisioning example with scp03 + user_id | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_USER_ID=y` |
-| `scp03_aes_key` | Device attestation provisioning example with scp03 + aes key | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_AES_KEY=y` |
-| `scp03_ec_key` | Device attestation provisioning example with scp03 + ec_key | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_SCP03_EC_KEY=y` |
+| `aes_key` | Device attestation provisioning example with aes_key session | evkcmimxrt1060, frdmrw612, frdmmcxw72@cm33_core0 | Default | `-DCONFIG_SE05X_AES_KEY=y` |
