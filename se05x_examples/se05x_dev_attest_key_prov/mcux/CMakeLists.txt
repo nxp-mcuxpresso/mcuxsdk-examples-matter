@@ -66,7 +66,6 @@ target_sources(app
     PRIVATE
     ${CHIP_ROOT}/third_party/simw-top-mini/repo/demos/se05x_dev_attest_key_prov/mcu/main.cpp
     ${CHIP_ROOT}/third_party/simw-top-mini/repo/demos/se05x_dev_attest_key_prov/common/se05x_dev_attest_key_prov.cpp
-    ${CHIP_ROOT}/examples/platform/nxp/common/app/support/Memconfig.cpp
 )
 
 if (CONFIG_MCUX_HW_DEVICE_MCXW727C)
@@ -77,13 +76,29 @@ if (CONFIG_MCUX_HW_DEVICE_MCXW727C)
     )
 endif()
 
+mcux_add_macro(
+    MBEDTLS_USER_CONFIG_FILE=\\\"${CHIP_ROOT}/third_party/simw-top-mini/repo/matter/se05x_demos_common/se05x_provision_mbedtls_user_config.h\\\"
+)
 if (CONFIG_MCUX_HW_DEVICE_MCXW727C)
         mcux_add_macro(
-        MBEDTLS_USER_CONFIG_FILE=\\\"${CHIP_ROOT}/third_party/simw-top-mini/repo/matter/se05x_demos_common/w72_se05x_provision_mbedtls_user_config.h\\\"
+        CHIP_SYSTEM_CONFIG_USE_OPENTHREAD_ENDPOINT=1
     )
+        target_sources(app
+            PRIVATE
+            ${CHIP_ROOT}/examples/platform/nxp/mcxw71/app/support/Memconfig.cpp
+            ${CHIP_ROOT}/src/lib/support/logging/TextOnlyLogging.cpp
+            ${CHIP_ROOT}/src/platform/nxp/common/Logging.cpp
+        )
+        target_include_directories(app
+            PRIVATE
+            ${CHIP_ROOT}
+            ${CHIP_ROOT}/src
+            ${CHIP_ROOT}/third_party/nlassert/repo/include
+        )
 else()
-    mcux_add_macro(
-        MBEDTLS_USER_CONFIG_FILE=\\\"${CHIP_ROOT}/third_party/simw-top-mini/repo/matter/se05x_demos_common/se05x_provision_mbedtls_user_config.h\\\"
+    target_sources(app
+        PRIVATE
+        ${CHIP_ROOT}/examples/platform/nxp/common/app/support/Memconfig.cpp
     )
 endif()
 
