@@ -25,7 +25,7 @@ light_switch_app_ble_cs:
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/light-switch-app/nxp/common
       destination: common
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
+    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw72/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
     - source: examples/matter_examples/light-switch-app-ble-cs/README.md
       destination: README.md
