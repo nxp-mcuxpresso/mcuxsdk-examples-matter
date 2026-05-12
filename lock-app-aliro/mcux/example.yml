@@ -31,7 +31,7 @@ lock_app_aliro:
       destination: source
     - source: examples/matter_examples/lock-app-aliro/include
       destination: include
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
+    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw72/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
       board: [frdmmcxw72]
     - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld

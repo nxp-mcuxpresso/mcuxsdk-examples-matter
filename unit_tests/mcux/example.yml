@@ -58,7 +58,6 @@ unit_tests@mcx_default:
       extra_build_args:
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 

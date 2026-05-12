@@ -28,12 +28,12 @@ lock_app:
       destination: zap
     - source: ${SdkRootDirPath}/middleware/matter/examples/lock-app/nxp/common
       destination: common
-    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw71/nxp_sdk_reconfig.cmake
+    - source: ${SdkRootDirPath}/middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/mcxw72/nxp_sdk_reconfig.cmake
       destination: nxp_sdk_reconfig.cmake
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      board: [frdmmcxw72, mcxw72evk]
     - source: ${SdkRootDirPath}/examples/_boards/${board}/wireless_examples/linker/gcc/connectivity.ld
       destination: ldscripts/connectivity.ld
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      board: [frdmmcxw72, mcxw72evk]
     replacements:
     - file: CMakeLists.txt
       replace:
@@ -55,7 +55,7 @@ lock_app:
       replace:
         - from: "LINKER ${MATTER_DEFAULT_LINKER_FILE_NAME}"
           to: "LINKER ldscripts/connectivity.ld"
-      board: [frdmmcxw71, frdmmcxw72, mcxw72evk]
+      board: [frdmmcxw72, mcxw72evk]
     freestanding_copied_folders:
     -  middleware/matter/third_party/nxp/nxp_matter_support/examples/platform/project_segments
     toolchains:
@@ -84,7 +84,6 @@ lock_app:
     - -mdk@sdram_debug
     - -mdk@sdram_release
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -98,7 +97,6 @@ lock_app@thread_mtd:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -111,7 +109,6 @@ lock_app@thread_mtd_low_power:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -125,7 +122,6 @@ lock_app@thread_mtd_factory_data:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -139,7 +135,6 @@ lock_app@thread_mtd_ota:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -152,7 +147,6 @@ lock_app@thread_mtd_ota_low_power:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -166,7 +160,6 @@ lock_app@thread_mtd_ota_factory_data:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
@@ -179,6 +172,5 @@ lock_app@thread_mtd_ota_factory_data_low_power:
       - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_ota_fdata_low_power.conf
       - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
   boards:
-    frdmmcxw71: []
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
