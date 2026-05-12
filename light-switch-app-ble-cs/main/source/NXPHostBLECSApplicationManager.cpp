@@ -65,7 +65,8 @@ static uint16_t mProcedureCount = 0x0U;
 
 BLEApplicationManager BLEApplicationManager::sInstance;
 
-void BLEApplicationManager::Init(void)
+/* This function must be called before Matter init in order to register callbacks */
+void BLEApplicationManager::PreMatterStackInit(void)
 {
     auto * bleManager = &chip::DeviceLayer::Internal::BLEMgrImpl();
     bleResult_t status = gBleSuccess_c;
@@ -84,6 +85,11 @@ void BLEApplicationManager::Init(void)
 #if gAppUseBonding_d
     btSettingsInit();
 #endif
+}
+
+void BLEApplicationManager::PostMatterStackInit(void)
+{
+    /* Empty implementation. Intentionally left blank */
 }
 
 void BLEApplicationManager::EnableMultipleConnectionsHandler(void)
