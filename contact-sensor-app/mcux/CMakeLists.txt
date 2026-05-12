@@ -102,7 +102,8 @@ if(CONFIG_CHIP_NXP_PLATFORM_MCXW71 OR CONFIG_CHIP_NXP_PLATFORM_MCXW72)
     )
 endif()
 
-if(CONFIG_CHIP_NXP_PLATFORM_MCXW72 AND CONFIG_NXP_USE_LOW_POWER)
+# Always include freertos_lp_hooks.c - it has internal guards for configUSE_TICKLESS_IDLE
+if(CONFIG_CHIP_NXP_PLATFORM_MCXW72)
     target_sources(app
         PRIVATE
         ${NXP_MATTER_SUPPORT_DIR}/examples/platform/common/low_power/freertos_lp_hooks.c
