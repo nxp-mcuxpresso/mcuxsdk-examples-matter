@@ -107,6 +107,20 @@ contact_sensor_app@thread_mtd:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
+contact_sensor_app@thread_mtd_battery:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread Minimal Thread Device (MTD) configuration with battery diagnostics (PowerSource clusters and FreeRTOS BatteryApplicationManager)
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_APP_BATTERY_MANAGER=y
+        - -DCONFIG_CHIP_APP_BATTERY_MANAGER_FREERTOS=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
 contact_sensor_app@thread_mtd_low_power:
   section-type: custom_application
   contents:
@@ -127,6 +141,20 @@ contact_sensor_app@thread_mtd_low_power_lit:
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
         - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+contact_sensor_app@thread_mtd_low_power_battery_lit:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD and Matter ICD LIT configuration with low power optimization and battery diagnostics (PowerSource clusters and FreeRTOS BatteryApplicationManager)
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_APP_BATTERY_MANAGER=y
+        - -DCONFIG_CHIP_APP_BATTERY_MANAGER_FREERTOS=y
   boards:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
