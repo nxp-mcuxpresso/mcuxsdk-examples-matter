@@ -601,6 +601,34 @@ thermostat@se05x_thread_ftd_wifi_border_router_iw610_ota_default_crypto_factory_
   boards:
     evkcmimxrt1060: []
 
+# --- SE05X with Wi-Fi Default Crypto Configuration (evkcmimxrt1060) and GPIO Enabled ---
+thermostat@se05x_wifi_iw610_default_crypto_gpio:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Wi-Fi configuration with IW610 transceiver and SE05X secure element (Node Oper key in SE05X) with host GPIO control for SE05X power on/off.
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
+        - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.board_murata_2ll_m2=y
+        - -DCONFIG_CHIP_SE05X=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+  boards:
+    evkcmimxrt1060: []
+
+# --- SE05X with Wi-Fi Default Crypto Configuration (frdmrw612) and GPIO Enabled ---
+thermostat@se05x_wifi_default_crypto_gpio:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Wi-Fi configuration with SE05X secure element (Node Oper key in SE05X) along with GPIO control for SE05X power on/off.
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
+        - -DCONFIG_CHIP_SE05X=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+  boards:
+    frdmrw612: []
+
 # --- SE05X with Wi-Fi Default Crypto Configuration (frdmrw612) using AES key secure session  ---
 thermostat@se05x_aes_key_wifi_default_crypto:
   section-type: custom_application
