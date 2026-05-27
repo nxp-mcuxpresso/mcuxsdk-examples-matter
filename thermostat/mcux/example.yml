@@ -606,7 +606,8 @@ thermostat@se05x_wifi_iw610_default_crypto_gpio:
   section-type: custom_application
   contents:
     document:
-      brief: Wi-Fi configuration with IW610 transceiver and SE05X secure element (Node Oper key in SE05X) with host GPIO control for SE05X power on/off.
+      brief: Wi-Fi configuration with IW610 transceiver and SE05X secure element (Node Oper key in SE05X) with host GPIO control for SE05X power on/off and to get the GPIO notification.
+        Refer [NXP SE05X Guide](../../../middleware/matter/docs/platforms/nxp/nxp_se05x_guide.md) for connections details.
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
         - -DCONFIG_MCUX_COMPONENT_component.wifi_bt_module.IW61X=y
@@ -621,7 +622,8 @@ thermostat@se05x_wifi_default_crypto_gpio:
   section-type: custom_application
   contents:
     document:
-      brief: Wi-Fi configuration with SE05X secure element (Node Oper key in SE05X) along with GPIO control for SE05X power on/off.
+      brief: Wi-Fi configuration with SE05X secure element (Node Oper key in SE05X) along with GPIO control for SE05X power on/off and to get the GPIO notification.
+        Refer [NXP SE05X Guide](../../../middleware/matter/docs/platforms/nxp/nxp_se05x_guide.md) for connections details.
       extra_build_args:
         - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_wifi.conf
         - -DCONFIG_CHIP_SE05X=y
