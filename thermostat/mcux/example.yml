@@ -686,3 +686,14 @@ thermostat@se05x_scp03_wifi_iw610_default_crypto:
         - -DCONFIG_SE05X_SCP03=y
   boards:
     evkcmimxrt1060: []
+# --- Thread FTD with EL2GO factory data and OTA (frdmrw612, rdrw612bga) ---
+thermostat@thread_ftd_el2go_ota:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread FTD configuration with EL2GO factory data and OTA updates
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd_fdata_el2go_ota.conf
+  boards:
+    frdmrw612: []
+    rdrw612bga: []
