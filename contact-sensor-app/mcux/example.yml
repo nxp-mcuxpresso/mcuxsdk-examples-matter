@@ -159,6 +159,37 @@ contact_sensor_app@thread_mtd_low_power_battery_lit:
     frdmmcxw72@cm33_core0: []
     mcxw72evk@cm33_core0: []
 
+# --- Thread MTD LIT with OTA Configuration ---
+contact_sensor_app@thread_mtd_low_power_lit_ota:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD and Matter ICD LIT configuration with low power optimization and OTA update capability
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_OTA_REQUESTOR=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
+# --- Thread MTD LIT with OTA and Factory Data Configuration ---
+contact_sensor_app@thread_mtd_low_power_lit_ota_factory_data:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread MTD and Matter ICD LIT configuration with low power optimization, OTA update capability and factory data
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_mtd_low_power_lit.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_OTA_REQUESTOR=y
+        - -DCONFIG_CHIP_FACTORY_DATA=y
+        - -DCONFIG_CHIP_FACTORY_DATA_CERT_SOURCE_GENERATED=y
+        - -DCONFIG_CHIP_FACTORY_DATA_GENERATE_SPAKE2_VERIFIER=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+    mcxw72evk@cm33_core0: []
+
 # --- Thread MTD with Factory Data Configuration ---
 contact_sensor_app@thread_mtd_factory_data:
   section-type: custom_application
