@@ -210,3 +210,39 @@ lighting_app@thread_ftd_se05x_default_crypto_with_cli_gpio:
         - -DCONFIG_SE05X_HOST_GPIO=y
   boards:
     frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD with SE05X Default Crypto with GPIO enabled using scp03 session ---
+lighting_app@thread_ftd_se05x_scp03_default_crypto_with_cli_gpio:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread Full Thread Device (FTD) configuration and SE05X default crypto with scp03 session enabled.
+        CLI enabled with GPIO control for SE05X power on/off and to get the GPIO notification.
+        Refer [NXP SE05X Guide](../../../middleware/matter/docs/platforms/nxp/nxp_se05x_guide.md) for connections details.
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_SE05X=y
+        - -DCONFIG_CHIP_LIB_SHELL=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+        - -DCONFIG_SE05X_SCP03=y
+  boards:
+    frdmmcxw72@cm33_core0: []
+
+# --- Thread FTD with SE05X Default Crypto with GPIO enabled using aes key session ---
+lighting_app@thread_ftd_se05x_aes_key_default_crypto_with_cli_gpio:
+  section-type: custom_application
+  contents:
+    document:
+      brief: Thread Full Thread Device (FTD) configuration and SE05X default crypto with aes key session enabled.
+        CLI enabled with GPIO control for SE05X power on/off and to get the GPIO notification.
+        Refer [NXP SE05X Guide](../../../middleware/matter/docs/platforms/nxp/nxp_se05x_guide.md) for connections details.
+      extra_build_args:
+        - -DCONF_FILE=middleware/matter/examples/platform/nxp/config/prj_thread_ftd.conf
+        - -DCONFIG_MCUX_COMPONENT_middleware.freertos-kernel.config=n
+        - -DCONFIG_CHIP_SE05X=y
+        - -DCONFIG_CHIP_LIB_SHELL=y
+        - -DCONFIG_SE05X_HOST_GPIO=y
+        - -DCONFIG_SE05X_AES_KEY=y
+  boards:
+    frdmmcxw72@cm33_core0: []
