@@ -82,6 +82,7 @@ target_include_directories(app
     ${ALL_CLUSTERS_COMMON_DIR}/include
     ${NXP_EXAMPLE_DIR}/main/include
     ${GEN_DIR}/app-common
+    ./include
 )
 
 target_sources(app
@@ -91,6 +92,7 @@ target_sources(app
     ${NXP_EXAMPLE_DIR}/main/DeviceCallbacks.cpp
     ${NXP_EXAMPLE_DIR}/main/ZclCallbacks.cpp
     ${ALL_CLUSTERS_COMMON_DIR}/src/binding-handler.cpp
+    ./src/ThermostatDiagnosticDataProvider.cpp
 )
 
 if(CONFIG_CHIP_WIFI AND CONFIG_NET_L2_OPENTHREAD)
