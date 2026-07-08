@@ -22,6 +22,10 @@ thermostat:
     extra_files:
       - source: examples/matter_examples/thermostat/README.md
         destination: README.md
+      - source: examples/matter_examples/thermostat/mcux/include
+        destination: include
+      - source: examples/matter_examples/thermostat/mcux/src
+        destination: src
       - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/zap
         destination: zap
       - source: ${SdkRootDirPath}/middleware/matter/examples/thermostat/nxp/common
